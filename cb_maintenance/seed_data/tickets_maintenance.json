@@ -1,0 +1,2162 @@
+[
+  {
+    "Department": "Maintenance",
+    "Category": "AC ",
+    "Sub Category 1": "Cleaning",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "AC ",
+    "Sub Category 1": "Cooling",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "AC ",
+    "Sub Category 1": "Display",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "AC ",
+    "Sub Category 1": "Not Getting On",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "AC ",
+    "Sub Category 1": "Remote",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "AC ",
+    "Sub Category 1": "Water Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "AirCurtain ",
+    "Sub Category 1": "Noisy",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "AirCurtain ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "AirCurtain ",
+    "Sub Category 1": "Sensor issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Biometric ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Booth/Bench ",
+    "Sub Category 1": "Laminate Peeling",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Booth/Bench ",
+    "Sub Category 1": "Open Gap",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Booth/Bench ",
+    "Sub Category 1": "Polishing",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Booth/Bench ",
+    "Sub Category 1": "Upholstery",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Chair ",
+    "Sub Category 1": "Broken",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Chair ",
+    "Sub Category 1": "Loose Joints",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Chair ",
+    "Sub Category 1": "Other",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Chair ",
+    "Sub Category 1": "Upholstery",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Chair ",
+    "Sub Category 1": "Wobbling",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ChestFreezer ",
+    "Sub Category 1": "Door Broken",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ChestFreezer ",
+    "Sub Category 1": "Gasket Broken",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ChestFreezer ",
+    "Sub Category 1": "Ice Formation",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ChestFreezer ",
+    "Sub Category 1": "Not Cooling at all",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ChestFreezer ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ChestFreezer ",
+    "Sub Category 1": "Required temp not met",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ChestFreezer ",
+    "Sub Category 1": "SS cladding",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ChestFreezer ",
+    "Sub Category 1": "Water Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Civil ",
+    "Sub Category 1": "Broken Tiles",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Civil ",
+    "Sub Category 1": "Drain Chamber issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Civil ",
+    "Sub Category 1": "Gap Closure",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Civil ",
+    "Sub Category 1": "Masonary",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Civil ",
+    "Sub Category 1": "Painting",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Civil ",
+    "Sub Category 1": "Polishing",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Civil ",
+    "Sub Category 1": "SS cladding",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Civil ",
+    "Sub Category 1": "Tiling",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Civil ",
+    "Sub Category 1": "Wall Hanging",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ColdBainMarie-ColdLine ",
+    "Sub Category 1": "Display Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ColdBainMarie-ColdLine ",
+    "Sub Category 1": "Door Broken",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ColdBainMarie-ColdLine ",
+    "Sub Category 1": "Door Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ColdBainMarie-ColdLine ",
+    "Sub Category 1": "Gasket",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ColdBainMarie-ColdLine ",
+    "Sub Category 1": "Ice Formation",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ColdBainMarie-ColdLine ",
+    "Sub Category 1": "Not Cooling at all",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ColdBainMarie-ColdLine ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ColdBainMarie-ColdLine ",
+    "Sub Category 1": "Required temp not met",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ColdRoom ",
+    "Sub Category 1": "Display Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ColdRoom ",
+    "Sub Category 1": "Door Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ColdRoom ",
+    "Sub Category 1": "Gasket Broken",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ColdRoom ",
+    "Sub Category 1": "Ice Formation",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ColdRoom ",
+    "Sub Category 1": "Not Cooling at all",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ColdRoom ",
+    "Sub Category 1": "Required temp not met",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ColdRoom ",
+    "Sub Category 1": "Strip curtains",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ColdRoom ",
+    "Sub Category 1": "Water Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "DG ",
+    "Sub Category 1": "Display Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "DG ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "DG ",
+    "Sub Category 1": "Running Continuously",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "DG ",
+    "Sub Category 1": "Turning Off",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Drawer/WoodenCabinet ",
+    "Sub Category 1": "Channel Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Drawer/WoodenCabinet ",
+    "Sub Category 1": "Handle",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Drawer/WoodenCabinet ",
+    "Sub Category 1": "Hinges issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Drawer/WoodenCabinet ",
+    "Sub Category 1": "Laminate Peeling",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Drawer/WoodenCabinet ",
+    "Sub Category 1": "Lock issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Drawer/WoodenCabinet ",
+    "Sub Category 1": "Shelf ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Electrical/DBBoard ",
+    "Sub Category 1": "Equipment Shock",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Electrical/DBBoard ",
+    "Sub Category 1": "Labelling",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Electrical/DBBoard ",
+    "Sub Category 1": "MCB Tripping",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Electrical/DBBoard ",
+    "Sub Category 1": "Wire Covering",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ElectricFryer ",
+    "Sub Category 1": "Buzzer is not working ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ElectricFryer ",
+    "Sub Category 1": "Fire Coming Out",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ElectricFryer ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ElectricFryer ",
+    "Sub Category 1": "Oil Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ElectricFryer ",
+    "Sub Category 1": "Temp Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Exhaust/FreshAir/Airwasher ",
+    "Sub Category 1": "Air Balancing",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Exhaust/FreshAir/Airwasher ",
+    "Sub Category 1": "Cooling",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Exhaust/FreshAir/Airwasher ",
+    "Sub Category 1": "Noisy",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Exhaust/FreshAir/Airwasher ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Exhaust/FreshAir/Airwasher ",
+    "Sub Category 1": "Oil Dripping",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Exhaust/FreshAir/Airwasher ",
+    "Sub Category 1": "Water Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Exhaust/FreshAir/Airwasher ",
+    "Sub Category 1": "Weak Airflow",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ExhaustHood/SS Equipments/SS Tables/ SS Racks /SneezeGuard ",
+    "Sub Category 1": "Bushes ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ExhaustHood/SS Equipments/SS Tables/ SS Racks /SneezeGuard ",
+    "Sub Category 1": "Exhuast hood - Filter Fixing ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ExhaustHood/SS Equipments/SS Tables/ SS Racks /SneezeGuard ",
+    "Sub Category 1": "Fixing ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "ExhaustHood/SS Equipments/SS Tables/ SS Racks /SneezeGuard ",
+    "Sub Category 1": "Requirement ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "FAS/GLDSystem ",
+    "Sub Category 1": "Leakage is not getting Detected",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "FAS/GLDSystem ",
+    "Sub Category 1": "Not working",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "FireExtinguisher/FireSafety ",
+    "Sub Category 1": "Empty",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "FireExtinguisher/FireSafety ",
+    "Sub Category 1": "Expired",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "FireExtinguisher/FireSafety ",
+    "Sub Category 1": "Fire Blanket",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "FireExtinguisher/FireSafety ",
+    "Sub Category 1": "Hood Supression Expired",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "FireExtinguisher/FireSafety ",
+    "Sub Category 1": "Stand Required",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "FireExtinguisher/FireSafety ",
+    "Sub Category 1": "Tag Missing",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "FireExtinguisher/FireSafety ",
+    "Sub Category 1": "Wall Hanging",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GasBurner ",
+    "Sub Category 1": "Balancing",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GasBurner ",
+    "Sub Category 1": "Burner Grid damaged",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GasBurner ",
+    "Sub Category 1": "Burner Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GasBurner ",
+    "Sub Category 1": "Flame Issues",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GasBurner ",
+    "Sub Category 1": "Gas Pipe Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GasBurner ",
+    "Sub Category 1": "Needs Service",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GasFryer ",
+    "Sub Category 1": "Fire Coming Out",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GasFryer ",
+    "Sub Category 1": "Gas Pipe Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GasFryer ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GasFryer ",
+    "Sub Category 1": "Oil Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GasFryer ",
+    "Sub Category 1": "Temp Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GasLeakage/Pressuure/ Gas line /Bank ",
+    "Sub Category 1": "Gas Line Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GasLeakage/Pressuure/ Gas line /Bank ",
+    "Sub Category 1": "Gas Line Painting",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GasLeakage/Pressuure/ Gas line /Bank ",
+    "Sub Category 1": "Gas not getting in Store ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GasLeakage/Pressuure/ Gas line /Bank ",
+    "Sub Category 1": "Gas pressure issue ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GasLeakage/Pressuure/ Gas line /Bank ",
+    "Sub Category 1": "Gas Regulator Issue ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GasLeakage/Pressuure/ Gas line /Bank ",
+    "Sub Category 1": "Meter Guage Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Geyser ",
+    "Sub Category 1": "Geyser Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Geyser ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Geyser ",
+    "Sub Category 1": "Pipe Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Geyser ",
+    "Sub Category 1": "Temp Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GlassDoor/Doors ",
+    "Sub Category 1": "Glass door Gap",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GlassDoor/Door ",
+    "Sub Category 1": "Glass Door Handle",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GlassDoor/Door ",
+    "Sub Category 1": "Glass Door Lock",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GlassDoor/Door ",
+    "Sub Category 1": "Door not closing",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GlassDoor/Door ",
+    "Sub Category 1": "Door Chipping",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GlassDoor/Door ",
+    "Sub Category 1": "Door Handle",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GlassDoor/Door ",
+    "Sub Category 1": "Door Lock",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GreaseTrap ",
+    "Sub Category 1": "Broken",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GreaseTrap ",
+    "Sub Category 1": "Leaking",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GreaseTrap ",
+    "Sub Category 1": "Missing Filter",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GreaseTrap ",
+    "Sub Category 1": "Missing Lid",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GreaseTrap ",
+    "Sub Category 1": "Not working",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "GreaseTrap ",
+    "Sub Category 1": "Valve Issue ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Grinder/Mixer ",
+    "Sub Category 1": "Not Getting Grinding",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Grinder/Mixer ",
+    "Sub Category 1": "Not working",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "HotBainMarie-Hotline ",
+    "Sub Category 1": "Divider issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "HotBainMarie-Hotline ",
+    "Sub Category 1": "Leaking",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "HotBainMarie-Hotline ",
+    "Sub Category 1": "Leg Bushes",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "HotBainMarie-Hotline ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "HotBainMarie-Hotline ",
+    "Sub Category 1": "On  - Heater not working ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "HotBainMarie-Hotline ",
+    "Sub Category 1": "Shock",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "HotBainMarie-Hotline ",
+    "Sub Category 1": "Temp Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "HotCabinet ",
+    "Sub Category 1": "Castor Wheel ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "HotCabinet ",
+    "Sub Category 1": "Door Not Closing",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "HotCabinet ",
+    "Sub Category 1": "Gaskets",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "HotCabinet ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "HotCabinet ",
+    "Sub Category 1": "Shock ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "HotCabinet ",
+    "Sub Category 1": "Temp Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "InductionCookTop ",
+    "Sub Category 1": "Glass Broken",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "InductionCookTop ",
+    "Sub Category 1": "Heating Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "InductionCookTop ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "InductionCookTop ",
+    "Sub Category 1": "Shock",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "InductionCookTop ",
+    "Sub Category 1": "Switch/Buttons",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "JuiceDispenser ",
+    "Sub Category 1": "Broken Jar/Lid",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "JuiceDispenser ",
+    "Sub Category 1": "Broken Nozzle/Tap",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "JuiceDispenser ",
+    "Sub Category 1": "Leaking",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "JuiceDispenser ",
+    "Sub Category 1": "Not Cooling",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "JuiceDispenser ",
+    "Sub Category 1": "Not Fixing properly ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "JuiceDispenser ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Lights ",
+    "Sub Category 1": "fascade Downlights",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Lights ",
+    "Sub Category 1": "Grazer lights ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Lights ",
+    "Sub Category 1": "Hanging Light",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Lights ",
+    "Sub Category 1": "LED Bulbs",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Lights ",
+    "Sub Category 1": "LED Strip",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Lights ",
+    "Sub Category 1": "Need to fix properly ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Lights ",
+    "Sub Category 1": "Serving Line Light",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Lights ",
+    "Sub Category 1": "Track Light",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Lights ",
+    "Sub Category 1": "Tube Light",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "MarketingBoards/Standees/OrderHereBoard/Tito ",
+    "Sub Category 1": "Welding ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "MerryChef ",
+    "Sub Category 1": "Display Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "MerryChef ",
+    "Sub Category 1": "Filter issue ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "MerryChef ",
+    "Sub Category 1": "Noisy",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "MerryChef ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "MerryChef ",
+    "Sub Category 1": "Temp Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Mirror ",
+    "Sub Category 1": "Broken ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "MultiKitchenTimers ",
+    "Sub Category 1": "Not Functioning",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "MultiKitchenTimers ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "MusicSystem/Speaker ",
+    "Sub Category 1": "Amplifier Not Working",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "MusicSystem/Speaker ",
+    "Sub Category 1": "Muffled Sound",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "MusicSystem/Speaker ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "MusicSystem/Speaker ",
+    "Sub Category 1": "Remote issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "MusicSystem/Speaker ",
+    "Sub Category 1": "Speaker Not Working",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "MusicSystem/Speaker ",
+    "Sub Category 1": "Uneven Sound",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Others ",
+    "Sub Category 1": "Others",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PestoFlash ",
+    "Sub Category 1": "Light Not Working",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PestoFlash ",
+    "Sub Category 1": "Not working ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PestoFlash ",
+    "Sub Category 1": "Light Not Working",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PestoFlash ",
+    "Sub Category 1": "Need Gum Pad",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PestoFlash ",
+    "Sub Category 1": "Need to Shift",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PestoFlash ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PlugPoint/MCB ",
+    "Sub Category 1": "Customer Plug Point",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PlugPoint/MCB ",
+    "Sub Category 1": "Industrial Sockets Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PlugPoint/MCB ",
+    "Sub Category 1": "Kitchen Plug Point",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PlugPoint/MCB ",
+    "Sub Category 1": "MCB is tripping ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PlugPoint/MCB ",
+    "Sub Category 1": "Need Extra Connection Points ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PlugPoint/MCB ",
+    "Sub Category 1": "Switch board Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PlugPoint/MCB ",
+    "Sub Category 1": "Wlan Port issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Plumbing ",
+    "Sub Category 1": "3 Sink Pipe Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Plumbing ",
+    "Sub Category 1": "3 Sink Pipe line Block",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Plumbing ",
+    "Sub Category 1": "Main Drain Choked",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Plumbing ",
+    "Sub Category 1": "Raw Water is not coming ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Plumbing ",
+    "Sub Category 1": "Raw Water is slow ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Plumbing ",
+    "Sub Category 1": "Seepage issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Plumbing ",
+    "Sub Category 1": "Wash Basin Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PressureCooker ",
+    "Sub Category 1": "Gasket issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PressureCooker ",
+    "Sub Category 1": "Handle Issue ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PressureCooker ",
+    "Sub Category 1": "Leakage ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PressureCooker ",
+    "Sub Category 1": "Not Cooking Properly ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PressureCooker ",
+    "Sub Category 1": "Safety valve need to fix",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "PressureCooker ",
+    "Sub Category 1": "Whistle Top",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RiceCooker ",
+    "Sub Category 1": "Auto-Warm Not Working",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RiceCooker ",
+    "Sub Category 1": "Broken Lid/Handle",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RiceCooker ",
+    "Sub Category 1": "Gas Pipe Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RiceCooker ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RiceCooker ",
+    "Sub Category 1": "Over heating ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RiceCooker ",
+    "Sub Category 1": "Rice Not cooking Properly ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RiceCooker ",
+    "Sub Category 1": "Shock",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RobotCoupe ",
+    "Sub Category 1": "Blade - 15mm Dice",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RobotCoupe ",
+    "Sub Category 1": "Blade - 15mm Slice",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RobotCoupe ",
+    "Sub Category 1": "Blade - 5MM Dice",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RobotCoupe ",
+    "Sub Category 1": "Blade - 5mm Slice",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RobotCoupe ",
+    "Sub Category 1": "Blade - Grater",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RobotCoupe ",
+    "Sub Category 1": "Hanger Issue ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RobotCoupe ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RO-WaterPurifier ",
+    "Sub Category 1": "Leakage issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RO-WaterPurifier ",
+    "Sub Category 1": "No Auto-Cut",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RO-WaterPurifier ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RO-WaterPurifier ",
+    "Sub Category 1": "Slow Flow",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RO-WaterPurifier ",
+    "Sub Category 1": "Tank Needs Cleaning",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RO-WaterPurifier ",
+    "Sub Category 1": "Tap Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "RO-WaterPurifier ",
+    "Sub Category 1": "Taste is Bad",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Safe Locker ",
+    "Sub Category 1": "Forgot Password",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Safe Locker ",
+    "Sub Category 1": "Loose/Movable",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Safe Locker ",
+    "Sub Category 1": "Not Closing",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Safe Locker ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Safe Locker ",
+    "Sub Category 1": "Not Opening",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Safe Locker ",
+    "Sub Category 1": "Password Change",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Sealing Machine ",
+    "Sub Category 1": "Heating Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Sealing Machine ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Sealing Machine ",
+    "Sub Category 1": "Sheet Replace",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Sealing Machine ",
+    "Sub Category 1": "Sheet Replacement ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Signage ",
+    "Sub Category 1": "Damaged",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Signage ",
+    "Sub Category 1": "Letter Alignment ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Signage ",
+    "Sub Category 1": "Letter Fell Down",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Signage ",
+    "Sub Category 1": "Needs Cleaning",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Signage ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Signage ",
+    "Sub Category 1": "Requirement ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Double/Four  Door Chiller ",
+    "Sub Category 1": "Castor Wheel",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Double/Four  Door Chiller ",
+    "Sub Category 1": "Display Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Double/Four  Door Chiller ",
+    "Sub Category 1": "Door Broken",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Double/Four  Door Chiller ",
+    "Sub Category 1": "Gasket Broken",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Double/Four  Door Chiller ",
+    "Sub Category 1": "Ice Formation",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Double/Four  Door Chiller ",
+    "Sub Category 1": "Not Cooling at all",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Double/Four  Door Chiller ",
+    "Sub Category 1": "Required temp not met",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Double/Four  Door Chiller ",
+    "Sub Category 1": "Water Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Double/Four  Door Chiller ",
+    "Sub Category 1": "Wired Shelve",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Double/Four door Freezer ",
+    "Sub Category 1": "Display Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Double/Four door Freezer ",
+    "Sub Category 1": "Door Broken",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Double/Four door Freezer ",
+    "Sub Category 1": "Gasket Broken",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Double/Four door Freezer ",
+    "Sub Category 1": "Ice Formation",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Double/Four door Freezer ",
+    "Sub Category 1": "Not Cooling at all",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Double/Four door Freezer ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Double/Four door Freezer ",
+    "Sub Category 1": "Required temp not met",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Double/Four door Freezer ",
+    "Sub Category 1": "Water Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Double/Four door Freezer ",
+    "Sub Category 1": "Wired Shelve",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "StaffRoom ",
+    "Sub Category 1": " Fan Not working ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "StaffRoom ",
+    "Sub Category 1": "Fan Requirement ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "StaffRoom ",
+    "Sub Category 1": "Lights Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "StaffRoom ",
+    "Sub Category 1": "Painting Requirement ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "StaffRoom ",
+    "Sub Category 1": "Pest Control",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "StaffRoom ",
+    "Sub Category 1": "Plumbing",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "StaffRoom ",
+    "Sub Category 1": "Power issue ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "StorageContainers ",
+    "Sub Category 1": "Caster Wheels Damage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "StorageContainers ",
+    "Sub Category 1": "Damage ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "StorageContainers ",
+    "Sub Category 1": "Storage Container Glass Removed ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Dine In Tables ",
+    "Sub Category 1": "Laminate/SS Sheet Peeling",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Dine In Tables ",
+    "Sub Category 1": "Paint",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Dine In Tables ",
+    "Sub Category 1": "Sharp",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Dine In Tables ",
+    "Sub Category 1": "Wobbling",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Tawa/GriddlePlate ",
+    "Sub Category 1": "Burner Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Tawa/GriddlePlate ",
+    "Sub Category 1": "Gas Pipe Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Tawa/GriddlePlate ",
+    "Sub Category 1": "Leakage issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Tawa/GriddlePlate ",
+    "Sub Category 1": "Low Temperature",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Tawa/GriddlePlate ",
+    "Sub Category 1": "Needs Service",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Tawa/GriddlePlate ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Tawa/GriddlePlate ",
+    "Sub Category 1": "Shock ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Thermometer-Infrared ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Thermometer-Infrared ",
+    "Sub Category 1": "Other",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Thermometer-Infrared ",
+    "Sub Category 1": "Wrong Temp",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Thermometer-Probe ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Thermometer-Probe ",
+    "Sub Category 1": "Other",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Thermometer-Probe ",
+    "Sub Category 1": "Wrong Temp",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Toilet/Restroom ",
+    "Sub Category 1": "Western Commode block ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Toilet/Restroom ",
+    "Sub Category 1": "Health Faucet gun not working/Leakage ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Toilet/Restroom ",
+    "Sub Category 1": "Western Commode Seat Issue ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Toilet/Restroom ",
+    "Sub Category 1": "Always Running Water",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Toilet/Restroom ",
+    "Sub Category 1": "Blockage ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Toilet/Restroom ",
+    "Sub Category 1": "No Water ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Toilet/Restroom ",
+    "Sub Category 1": "Toilet Exhaust issue ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Toilet/Restroom ",
+    "Sub Category 1": "Seepage issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Toilet/Restroom ",
+    "Sub Category 1": "Water leakage issue ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "TortillaPress ",
+    "Sub Category 1": "Heating isssue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "TortillaPress ",
+    "Sub Category 1": "Hinges issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "TortillaPress ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "TortillaPress ",
+    "Sub Category 1": "Shock",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "TortillaPress ",
+    "Sub Category 1": "Warped Plate",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Trolley ",
+    "Sub Category 1": "Castor Wheel Broken",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Trolley ",
+    "Sub Category 1": "Handle Broken",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Trolley ",
+    "Sub Category 1": "Other",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Trolley ",
+    "Sub Category 1": "Requirement ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "TVMenu ",
+    "Sub Category 1": "Alignment ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "TVMenu ",
+    "Sub Category 1": "Brightness Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "TVMenu ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "TVMenu ",
+    "Sub Category 1": "Remote",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "TVMenu ",
+    "Sub Category 1": "Screen Damaged",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "UPS/Inverter ",
+    "Sub Category 1": "Not Giving the Backup ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "UPS/Inverter ",
+    "Sub Category 1": "Not working",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Utilities ",
+    "Sub Category 1": "Energy Meter Not working ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Utilities ",
+    "Sub Category 1": "Gas meter Not working ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Utilities ",
+    "Sub Category 1": "Water meter Not working ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "VisiCooler/BackbarChiller ",
+    "Sub Category 1": "Door Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "VisiCooler/BackbarChiller ",
+    "Sub Category 1": "Light issue ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "VisiCooler/BackbarChiller ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "VisiCooler/BackbarChiller ",
+    "Sub Category 1": "Temperature Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "VisiCooler/BackbarChiller ",
+    "Sub Category 1": "Water Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "WaterTaps ",
+    "Sub Category 1": "3 Sink Taps Leakge/ Not working ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "WaterTaps ",
+    "Sub Category 1": "Bathroom Taps Not working /Leakage ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "WaterTaps ",
+    "Sub Category 1": "RO taps Not Working/Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "WaterTaps ",
+    "Sub Category 1": "Wash Basin Tap leakage ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "WaterTaps ",
+    "Sub Category 1": "Wash Basin Tap Loosen ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "WeightScale-Large ",
+    "Sub Category 1": "Display Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "WeightScale-Large ",
+    "Sub Category 1": "Not Accurate",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "WeightScale-Large ",
+    "Sub Category 1": "Not Charging",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "WeightScale-Large ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "WeightScale-Large ",
+    "Sub Category 1": "Stamping ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "WeightScale-Small ",
+    "Sub Category 1": "Display Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "WeightScale-Small ",
+    "Sub Category 1": "Not Accurate",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "WeightScale-Small ",
+    "Sub Category 1": "Not Charging",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "WeightScale-Small ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "WeightScale-Small ",
+    "Sub Category 1": "Stamping ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Under counter Freezer ",
+    "Sub Category 1": "Display Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Under counter Freezer ",
+    "Sub Category 1": "Door Broken",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Under counter Freezer ",
+    "Sub Category 1": "Gasket Broken",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Under counter Freezer ",
+    "Sub Category 1": "Ice Formation",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Under counter Freezer ",
+    "Sub Category 1": "Not Cooling at all",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Under counter Freezer ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Under counter Freezer ",
+    "Sub Category 1": "Required temp not met",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Under counter Freezer ",
+    "Sub Category 1": "Water Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Under counter Freezer ",
+    "Sub Category 1": "Wired Shelve",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Under counter chiller ",
+    "Sub Category 1": "Display Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Under counter chiller ",
+    "Sub Category 1": "Door Broken",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Under counter chiller ",
+    "Sub Category 1": "Gasket Broken",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Under counter chiller ",
+    "Sub Category 1": "Ice Formation",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Under counter chiller ",
+    "Sub Category 1": "Not Cooling at all",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Under counter chiller ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Under counter chiller ",
+    "Sub Category 1": "Required temp not met",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Under counter chiller ",
+    "Sub Category 1": "Water Leakage",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Under counter chiller ",
+    "Sub Category 1": "Wired Shelve",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Water test Reports-Doing by third Party ",
+    "Sub Category 1": "Required  ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Food test Reports-Doing by Third party ",
+    "Sub Category 1": "Required  ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "TB HotBainMarie-Hotline ",
+    "Sub Category 1": "Leaking",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "TB HotBainMarie-Hotline ",
+    "Sub Category 1": "Leg Bushes",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "TB HotBainMarie-Hotline ",
+    "Sub Category 1": "Not getting on",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "TB HotBainMarie-Hotline ",
+    "Sub Category 1": "On  - Heater not working ",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "TB HotBainMarie-Hotline ",
+    "Sub Category 1": "Shock",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "TB HotBainMarie-Hotline ",
+    "Sub Category 1": "Temp Issue",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Wall Fan ",
+    "Sub Category 1": "Not working",
+    "Sub Category 2": null
+  },
+  {
+    "Department": "Maintenance",
+    "Category": "Wall Fan ",
+    "Sub Category 1": "Needs Service",
+    "Sub Category 2": null
+  }
+]

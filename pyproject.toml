@@ -1,0 +1,14 @@
+[project]
+name = "cb_maintenance"
+authors = [
+    { name = "Mihir Vora", email = "er.voramihir@gmail.com" }
+]
+description = "California Burrito maintenance operations (PM + reactive tickets)"
+requires-python = ">=3.10"
+readme = "README.md"
+dynamic = ["version"]
+dependencies = []
+
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"

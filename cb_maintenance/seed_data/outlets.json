@@ -1,0 +1,534 @@
+[
+  {
+    "city": "NCR",
+    "outlet_code": "ADM"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "AKA"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "ANN"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "ARK"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "ATL"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "ATT"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "AVK"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "BAG"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "BNJ"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "BTG"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "BVG"
+  },
+  {
+    "city": "CHN",
+    "outlet_code": "CAR"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "CLA"
+  },
+  {
+    "city": "CHN",
+    "outlet_code": "CPM"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "CVR"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "CYG"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "DCB"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "DCH"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "DIV"
+  },
+  {
+    "city": "CHN",
+    "outlet_code": "DLP"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "DSL"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "DTK"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "DWR"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "ECN"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "ECT"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "ECW"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "EGL"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "EKL"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "EST"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "ETF"
+  },
+  {
+    "city": "CHN",
+    "outlet_code": "EXA"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "FDN"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "FLM"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "FSM"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "GCN"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "GEB"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "GSC"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "GSM"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "HIM"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "HSR"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "IBC"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "IHY"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "IND"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "ITP"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "JAP"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "JIG"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "JPN"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "KAM"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "KBB"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "KCK"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "KNP"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "KOR"
+  },
+  {
+    "city": "CHN",
+    "outlet_code": "KTP"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "LTP"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "MAN"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "NSS"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "ORW"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "PBF"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "PPM"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "PRM"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "PTP"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "RGA"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "RMZ"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "ROH"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "RRR"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "SCH"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "SCK"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "SES"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "SFC"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "SHV"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "SJP"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "SKO"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "SMR"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "STN"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "SYH"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "VBP"
+  },
+  {
+    "city": "CHN",
+    "outlet_code": "VEL"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "VIR"
+  },
+  {
+    "city": "CHN",
+    "outlet_code": "VRA"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "MOM"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "JAY"
+  },
+  {
+    "city": "CHN",
+    "outlet_code": "NUN"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "AYN"
+  },
+  {
+    "city": "CHN",
+    "outlet_code": "PER"
+  },
+  {
+    "city": "CHN",
+    "outlet_code": "OPP"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "BOM"
+  },
+  {
+    "city": "CHN",
+    "outlet_code": "MMM"
+  },
+  {
+    "city": "CHN",
+    "outlet_code": "DLT"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "AMZ"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "MAY"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "TGN"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "PTG"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "RAJ"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "SHA"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "HKZ"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "WHT"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "MFT"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "NEX"
+  },
+  {
+    "city": "CHN",
+    "outlet_code": "PAD"
+  },
+  {
+    "city": "PUN",
+    "outlet_code": "WST"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "FKM"
+  },
+  {
+    "city": "PUN",
+    "outlet_code": "MTM"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "KOK"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "FCK"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "SIN"
+  },
+  {
+    "city": "PUN",
+    "outlet_code": "BAV"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "LOG"
+  },
+  {
+    "city": "CHN",
+    "outlet_code": "CRM"
+  },
+  {
+    "city": "PUN",
+    "outlet_code": "PKN"
+  },
+  {
+    "city": "PUN",
+    "outlet_code": "KGB"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "NKG"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "VEG"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "MOA"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "UEP"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "GOT"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "DLG"
+  },
+  {
+    "city": "CHN",
+    "outlet_code": "AMB"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "SOG"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "BRK"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "HSO"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "RNE"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "GNJ"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "CYC"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "QTF"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "SRI"
+  },
+  {
+    "city": "CHN",
+    "outlet_code": "FRC"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "JAL"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "SBG"
+  },
+  {
+    "city": "HYD",
+    "outlet_code": "PHC"
+  },
+  {
+    "city": "PUN",
+    "outlet_code": "TAT"
+  },
+  {
+    "city": "NCR",
+    "outlet_code": "VAI"
+  },
+  {
+    "city": "BLR",
+    "outlet_code": "BGR"
+  },
+  {
+    "city": "PUN",
+    "outlet_code": "PAM"
+  }
+]
