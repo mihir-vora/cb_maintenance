@@ -1,5 +1,7 @@
 # CB Maintenance — Frappe App
 
+**Live demo:** [https://mihir-cb-maintenance.m.frappe.cloud](https://mihir-cb-maintenance.m.frappe.cloud)
+
 Maintenance operations system for California Burrito: preventive maintenance (PM) scheduling and reactive tickets.
 
 ## Features (v1)
@@ -25,33 +27,101 @@ Maintenance operations system for California Burrito: preventive maintenance (PM
 | CB Spare Part | Parts catalog with codes |
 | CB Maintenance Ticket | Reactive breakdown ticket |
 
-## Local setup (Frappe bench)
+---
 
-```bash
-# On Ubuntu / WSL with bench installed
-cd ~/frappe-bench
-bench get-app /path/to/cb_maintenance
-bench --site <site> install-app cb_maintenance
-bench --site <site> migrate
-```
+## Local setup
 
 Seed data loads automatically on `install-app` from the bundled case files in `cb_maintenance/seed_data/`.
+
+### Option A — Docker (recommended on Windows)
+
+**Prerequisites:** [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running.
+
+```powershell
+# Clone the repo, then from the project root:
+cd docker
+docker compose up
+```
+
+First run takes 10–20 minutes (bench init, site creation, app install, asset build). Later starts are faster.
+
+| Item | Value |
+|------|-------|
+| URL | [http://localhost:8000](http://localhost:8000) |
+| Site | `cb-maintenance.localhost` |
+| User | `Administrator` |
+| Password | `admin123` |
+
+**Useful commands:**
+
+```powershell
+# Run in background
+docker compose up -d
+
+# View logs
+docker compose logs -f frappe
+
+# Stop
+docker compose down
+
+# Reinstall app after code changes (inside container)
+docker exec -it docker-frappe-1 bash -c "cd /home/frappe/frappe-bench && rm -rf apps/cb_maintenance && cp -a /workspace/cb_maintenance apps/cb_maintenance && cp /workspace/cb_maintenance/README.md apps/cb_maintenance/ && ./env/bin/pip install -e apps/cb_maintenance -q && bench --site cb-maintenance.localhost install-app cb_maintenance --force"
+```
+
+The compose file mounts the repo at `/workspace/cb_maintenance` and persists the bench in `.docker-bench/`.
+
+### Option B — Frappe bench (Ubuntu / WSL)
+
+**Prerequisites:** [Frappe bench](https://frappeframework.com/docs/user/en/installation) (v15), MariaDB, Redis, Python 3.10+.
+
+```bash
+# Create or use an existing bench
+cd ~/frappe-bench
+
+# Add this app (use your clone path)
+bench get-app /path/to/cb_maintenance
+
+# Create a site (skip if you already have one)
+bench new-site cb-maintenance.localhost
+
+# Install app (runs seed import via after_install)
+bench --site cb-maintenance.localhost install-app cb_maintenance
+
+# Start the dev server
+bench start
+```
+
+Open [http://localhost:8000](http://localhost:8000) and log in with the Administrator password you set during `bench new-site`.
+
+**Validate seed files without Frappe:**
+
+```bash
+python scripts/validate_seed.py
+```
+
+---
 
 ## Frappe Cloud deployment
 
 1. Push this repo to **public GitHub**.
-2. Create a free trial at [frappecloud.com](https://frappecloud.com).
-3. New Site → install **Frappe** (no ERPNext required).
-4. **Install App** → paste your GitHub repo URL → Install.
+2. Create a site at [frappecloud.com](https://frappecloud.com) with **Frappe** (ERPNext not required).
+3. **Update bench** → **Install App** → paste your GitHub repo URL → Install.
+4. After install, verify **CB Outlet** (~133 records) and **CB PM Work Order** are populated.
 5. Create a **System Manager** user for reviewers and share URL + credentials.
 
-## Demo login (after install)
+**Live instance:** [https://mihir-cb-maintenance.m.frappe.cloud](https://mihir-cb-maintenance.m.frappe.cloud)
 
-- User: `Administrator` / password you set at site creation
-- Or create `reviewer@californiaburrito.in` with System Manager role
+---
+
+## Demo login
+
+- **Frappe Cloud:** use the Administrator password set at site creation, or a reviewer account you create.
+- **Docker local:** `Administrator` / `admin123` (see table above).
+
+---
 
 ## Scope notes
 
-- PM tracker sample covers 10 outlets; all 133 outlets are seeded from `PM_Case_Outlets.xlsx`.
+- PM tracker sample covers 10 outlets; all 133 outlets are seeded from the case outlet master.
 - Ticket/spare-parts taxonomy imported from case files (Maintenance + Spare Parts departments).
 - Mumbai zonal office included for staff; no Mumbai outlets in outlet master.
