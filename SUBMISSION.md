@@ -8,7 +8,7 @@ Follow these steps in order to complete and submit the assignment.
 
 The Frappe custom app **`cb_maintenance`** is in:
 
-`c:\Users\Mihir Vora\Downloads\Software Engineer Case\cb_maintenance`
+`c:\Users\Mihir Vora\Downloads\cb_maintenance`
 
 It includes:
 - 10 DocTypes (Outlets, Assets, PM rules/work orders, Tickets, Staff, Spare Parts)
@@ -32,7 +32,7 @@ It includes:
 Open PowerShell in the app folder and run:
 
 ```powershell
-cd "c:\Users\Mihir Vora\Downloads\Software Engineer Case\cb_maintenance"
+cd "c:\Users\Mihir Vora\Downloads\cb_maintenance"
 git init
 git add -A
 git commit -m "California Burrito maintenance case submission"

@@ -4,8 +4,8 @@ from pathlib import Path
 
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parents[2]
-SRC = ROOT / "Software Engineer Case"
+# Case data files live in the assignment folder (sibling under Downloads).
+SRC = Path(__file__).resolve().parents[2].parent / "Software Engineer Case" / "Software Engineer Case"
 DST = Path(__file__).resolve().parents[1] / "cb_maintenance" / "seed_data"
 DST.mkdir(parents=True, exist_ok=True)
 

@@ -1,0 +1,42 @@
+services:
+  mariadb:
+    image: mariadb:10.6
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: frappe
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-pfrappe"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  frappe:
+    image: frappe/bench:v5.27.0
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+      - "9000:9000"
+    volumes:
+      - ../.docker-bench:/home/frappe/frappe-bench
+      - ../:/workspace/cb_maintenance:ro
+      - ./bench-entrypoint.sh:/home/frappe/bench-entrypoint.sh:ro
+    working_dir: /home/frappe
+    command: ["bash", "/home/frappe/bench-entrypoint.sh"]
+
+volumes:
+  mariadb-data:

@@ -19,6 +19,7 @@ doc_events = {
 		"after_insert": "cb_maintenance.cb_maintenance.utils.pm_utils.generate_work_orders_for_asset",
 	},
 	"CB PM Schedule Rule": {
+		"after_insert": "cb_maintenance.cb_maintenance.utils.pm_utils.roll_out_rule_to_assets",
 		"on_update": "cb_maintenance.cb_maintenance.utils.pm_utils.roll_out_rule_to_assets",
 	},
 }

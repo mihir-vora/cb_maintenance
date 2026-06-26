@@ -11,15 +11,17 @@ frappe.ui.form.on("CB Maintenance Ticket", {
 		}
 	},
 	ticket_category(frm) {
-		if (frm.doc.ticket_category && frm.doc.asset) {
-			const asset_type = frappe.db.get_value("CB Asset", frm.doc.asset, "asset_type");
+		if (!frm.doc.ticket_category || !frm.doc.asset) return;
+		frappe.db.get_value("CB Asset", frm.doc.asset, "asset_type").then((r) => {
+			const asset_type = r.message?.asset_type || r.message;
+			if (!asset_type) return;
 			frappe.call({
 				method: "cb_maintenance.cb_maintenance.utils.pm_utils.suggest_spare_part",
 				args: { ticket_category: frm.doc.ticket_category, asset_type },
-				callback(r) {
-					if (r.message) frm.set_value("suggested_spare_part", r.message);
+				callback(res) {
+					if (res.message) frm.set_value("suggested_spare_part", res.message);
 				},
 			});
-		}
+		});
 	},
 });

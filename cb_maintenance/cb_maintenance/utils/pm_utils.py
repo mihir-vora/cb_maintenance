@@ -95,7 +95,10 @@ def complete_pm_work_order(work_order: str, notes: str | None = None, failed: in
 	done_on = today()
 	doc.status = "Completed"
 	doc.completed_on = done_on
-	doc.completed_by = frappe.session.user
+	staff_name = frappe.db.get_value(
+		"CB Maintenance Staff", {"email": frappe.session.user}, "full_name"
+	)
+	doc.completed_by_staff = staff_name or frappe.session.user
 	if notes:
 		doc.notes = notes
 

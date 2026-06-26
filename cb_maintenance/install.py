@@ -70,14 +70,26 @@ def _load_outlets():
 		).insert(ignore_permissions=True)
 
 
+def _normalize_name(name: str) -> str:
+	return " ".join((name or "").split()).lower()
+
+
+def _resolve_zonal_office(home: str | None) -> str | None:
+	home = (home or "").strip()
+	if not home or home == "COR":
+		return None
+	if frappe.db.exists("CB Zonal Office", home):
+		return home
+	return None
+
+
 def _load_staff():
 	reports_map = {}
 	for row in _load_json("staff.json"):
 		emp_no = str(row.get("Employee No", "")).strip()
 		if not emp_no:
 			continue
-		name = emp_no
-		if frappe.db.exists("CB Maintenance Staff", name):
+		if frappe.db.exists("CB Maintenance Staff", emp_no):
 			continue
 		doc = frappe.get_doc(
 			{
@@ -87,17 +99,21 @@ def _load_staff():
 				"job_title": (row.get("Job title") or "").strip(),
 				"email": (row.get("Email") or "").strip(),
 				"mobile": str(row.get("Mobile") or "").strip(),
-				"zonal_office": (row.get("Home") or "").strip() or None,
+				"zonal_office": _resolve_zonal_office(row.get("Home")),
 				"is_active": 1,
 			}
 		)
 		doc.insert(ignore_permissions=True)
-		reports_map[doc.full_name.lower()] = doc.name
+		reports_map[_normalize_name(doc.full_name)] = doc.name
 
-	# Second pass: wire reports_to links
+	aliases = {
+		"sujith h s": "sujith kumar h s",
+		"gadideshi kumar": "gadideshi rajesh kumar",
+	}
 	for row in _load_json("staff.json"):
 		emp_no = str(row.get("Employee No", "")).strip()
-		manager = (row.get("Reports to") or "").strip().lower()
+		manager = _normalize_name(row.get("Reports to"))
+		manager = aliases.get(manager, manager)
 		if emp_no and manager and manager in reports_map:
 			frappe.db.set_value(
 				"CB Maintenance Staff", emp_no, "reports_to", reports_map[manager], update_modified=False
