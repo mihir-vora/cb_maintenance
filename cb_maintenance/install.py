@@ -19,16 +19,20 @@ CITY_TO_ZONE = {
 
 def after_install():
 	"""Load case data after app install."""
-	frappe.clear_cache()
-	_load_zonal_offices()
-	_load_outlets()
-	_load_staff()
-	_load_asset_types_and_rules()
-	_load_assets_and_pm_history()
-	_load_ticket_categories()
-	_load_spare_parts()
-	frappe.db.commit()
-	frappe.msgprint("CB Maintenance seed data imported successfully.")
+	frappe.flags.cb_maintenance_seed = True
+	try:
+		frappe.clear_cache()
+		_load_zonal_offices()
+		_load_outlets()
+		_load_staff()
+		_load_asset_types_and_rules()
+		_load_assets_and_pm_history()
+		_load_ticket_categories()
+		_load_spare_parts()
+		frappe.db.commit()
+		frappe.msgprint("CB Maintenance seed data imported successfully.")
+	finally:
+		frappe.flags.cb_maintenance_seed = False
 
 
 def _load_json(name: str):
@@ -202,16 +206,16 @@ def _load_assets_and_pm_history():
 			except Exception:
 				completed_on = None
 
-		wo_name = f"{asset_name}::{task}"
-		if frappe.db.exists("CB PM Work Order", wo_name):
-			continue
-
 		from frappe.utils import add_days, today
 
-		due = completed_on or today()
 		if status == "Open":
-			# If monthly marks exist without last_done, set due to start of period
 			due = today()
+		else:
+			due = add_days(completed_on or today(), parse_frequency(freq))
+
+		wo_name = f"{asset_name}::{task}::{due}"
+		if frappe.db.exists("CB PM Work Order", wo_name):
+			continue
 
 		frappe.get_doc(
 			{
@@ -223,9 +227,7 @@ def _load_assets_and_pm_history():
 				"schedule_rule": rule_name,
 				"task": task,
 				"frequency": freq,
-				"due_date": due
-				if status == "Open"
-				else add_days(completed_on or today(), parse_frequency(freq)),
+				"due_date": due,
 				"status": status,
 				"completed_on": completed_on,
 				"completed_by_staff": done_by if done_by and str(done_by) != "nan" else None,

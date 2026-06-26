@@ -25,8 +25,14 @@ def parse_frequency(freq: str | None) -> int:
 	return FREQUENCY_DAYS.get(key, 30)
 
 
+def _work_order_name(asset: str, task: str, due_date) -> str:
+	return f"{asset}::{task}::{due_date}"
+
+
 def generate_work_orders_for_asset(doc, method=None):
 	"""Create open PM work orders for every active schedule rule matching this asset type."""
+	if getattr(frappe.flags, "cb_maintenance_seed", False):
+		return
 	rules = frappe.get_all(
 		"CB PM Schedule Rule",
 		filters={"asset_type": doc.asset_type, "is_active": 1},
@@ -38,6 +44,8 @@ def generate_work_orders_for_asset(doc, method=None):
 
 def roll_out_rule_to_assets(doc, method=None):
 	"""When a schedule rule is saved, ensure work orders exist for all assets of that type."""
+	if getattr(frappe.flags, "cb_maintenance_seed", False):
+		return
 	if not doc.is_active:
 		return
 	assets = frappe.get_all(
@@ -58,9 +66,11 @@ def _create_work_order_if_missing(asset, rule_name, task, frequency):
 
 	asset_doc = frappe.get_doc("CB Asset", asset)
 	due = today()
+	work_order_name = _work_order_name(asset, task, due)
 	frappe.get_doc(
 		{
 			"doctype": "CB PM Work Order",
+			"work_order_name": work_order_name,
 			"outlet": asset_doc.outlet,
 			"asset": asset,
 			"asset_type": asset_doc.asset_type,
@@ -115,9 +125,11 @@ def complete_pm_work_order(work_order: str, notes: str | None = None, failed: in
 def _schedule_next_work_order(completed: Document):
 	days = parse_frequency(completed.frequency)
 	next_due = add_days(completed.completed_on or today(), days)
+	work_order_name = _work_order_name(completed.asset, completed.task, next_due)
 	frappe.get_doc(
 		{
 			"doctype": "CB PM Work Order",
+			"work_order_name": work_order_name,
 			"outlet": completed.outlet,
 			"asset": completed.asset,
 			"asset_type": completed.asset_type,
