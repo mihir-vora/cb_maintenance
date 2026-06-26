@@ -1,12 +1,10 @@
 # Copyright (c) 2026, CB Maintenance and contributors
 # For license information, please see license.txt
 
-from datetime import date, timedelta
-
 import frappe
 from frappe import _
-from frappe.utils import add_days, getdate, today
-
+from frappe.model.document import Document
+from frappe.utils import add_days, today
 
 FREQUENCY_DAYS = {
 	"weekly": 7,
@@ -114,7 +112,7 @@ def complete_pm_work_order(work_order: str, notes: str | None = None, failed: in
 	return doc.name
 
 
-def _schedule_next_work_order(completed: frappe.Document):
+def _schedule_next_work_order(completed: Document):
 	days = parse_frequency(completed.frequency)
 	next_due = add_days(completed.completed_on or today(), days)
 	frappe.get_doc(
@@ -132,7 +130,7 @@ def _schedule_next_work_order(completed: frappe.Document):
 	).insert(ignore_permissions=True)
 
 
-def _create_ticket_from_failed_pm(pm_doc: frappe.Document):
+def _create_ticket_from_failed_pm(pm_doc: Document):
 	asset_doc = frappe.get_doc("CB Asset", pm_doc.asset)
 	category = _guess_ticket_category(asset_doc.asset_type)
 	spare = _find_spare_part(asset_doc.asset_type, pm_doc.task)
