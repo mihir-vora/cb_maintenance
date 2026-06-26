@@ -213,14 +213,16 @@ def _load_assets_and_pm_history():
 		else:
 			due = add_days(completed_on or today(), parse_frequency(freq))
 
-		wo_name = f"{asset_name}::{task}::{due}"
-		if frappe.db.exists("CB PM Work Order", wo_name):
+		if frappe.db.exists(
+			"CB PM Work Order",
+			{"asset": asset_name, "task": task, "due_date": due},
+		):
 			continue
 
 		frappe.get_doc(
 			{
 				"doctype": "CB PM Work Order",
-				"work_order_name": wo_name,
+				"naming_series": "CB-PM-.YYYY.-.#####",
 				"outlet": outlet,
 				"asset": asset_name,
 				"asset_type": asset_type,
