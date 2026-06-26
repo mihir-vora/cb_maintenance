@@ -120,6 +120,12 @@ def _load_staff():
 			)
 
 
+def _normalize_freq(freq) -> str:
+	if freq is None or str(freq).strip().lower() in ("", "nan", "none", "nat"):
+		return "Monthly"
+	return str(freq).strip()
+
+
 def _load_asset_types_and_rules():
 	pm_rows = _load_json("pm_tracker.json")
 	asset_types = set()
@@ -127,7 +133,7 @@ def _load_asset_types_and_rules():
 	for row in pm_rows:
 		asset = (row.get("Asset") or "").strip()
 		task = (row.get("Task") or "").strip()
-		freq = row.get("Freq")
+		freq = _normalize_freq(row.get("Freq"))
 		if asset:
 			asset_types.add(asset)
 		if asset and task:
@@ -139,7 +145,7 @@ def _load_asset_types_and_rules():
 				ignore_permissions=True
 			)
 
-	for asset, task, freq in sorted(rules):
+	for asset, task, freq in sorted(rules, key=lambda r: (r[0], r[1], r[2])):
 		rule_name = f"{asset}::{task}"
 		if frappe.db.exists("CB PM Schedule Rule", rule_name):
 			continue
@@ -149,7 +155,7 @@ def _load_asset_types_and_rules():
 				"rule_name": rule_name,
 				"asset_type": asset,
 				"task": task,
-				"frequency": freq or "Monthly",
+				"frequency": freq,
 				"frequency_days": parse_frequency(freq),
 				"is_active": 1,
 			}
@@ -163,7 +169,7 @@ def _load_assets_and_pm_history():
 		outlet = (row.get("Outlet") or "").strip()
 		asset_type = (row.get("Asset") or "").strip()
 		task = (row.get("Task") or "").strip()
-		freq = row.get("Freq")
+		freq = _normalize_freq(row.get("Freq"))
 		if not outlet or not asset_type:
 			continue
 		if not frappe.db.exists("CB Outlet", outlet):
@@ -216,8 +222,10 @@ def _load_assets_and_pm_history():
 				"asset_type": asset_type,
 				"schedule_rule": rule_name,
 				"task": task,
-				"frequency": freq or "Monthly",
-				"due_date": due if status == "Open" else add_days(completed_on, parse_frequency(freq)),
+				"frequency": freq,
+				"due_date": due
+				if status == "Open"
+				else add_days(completed_on or today(), parse_frequency(freq)),
 				"status": status,
 				"completed_on": completed_on,
 				"completed_by_staff": done_by if done_by and str(done_by) != "nan" else None,
