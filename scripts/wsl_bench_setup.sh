@@ -2,7 +2,7 @@
 set -euo pipefail
 
 export DEBIAN_FRONTEND=noninteractive
-APP_SRC="/mnt/c/Users/Mihir Vora/Downloads/cb_maintenance"
+APP_SRC="/mnt/d/cb_maintenance"
 BENCH_DIR="$HOME/frappe-bench"
 SITE="cb-maintenance.localhost"
 DB_ROOT_PASS="frappe"
