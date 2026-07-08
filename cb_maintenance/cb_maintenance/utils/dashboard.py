@@ -1,35 +1,42 @@
 # Copyright (c) 2026, CB Maintenance and contributors
 import frappe
-from frappe.utils import today, add_days
+from frappe.utils import add_days, today
+
+CACHE_KEY = "cb_maintenance_dashboard_stats"
+CACHE_TTL = 60
+
+
+def clear_dashboard_cache():
+	frappe.cache.delete_value(CACHE_KEY)
 
 
 @frappe.whitelist()
 def get_dashboard_stats():
-	"""Summary counts for the maintenance home page."""
-	open_pm = frappe.db.count("CB PM Work Order", {"status": "Open"})
-	overdue_pm = frappe.db.count("CB PM Work Order", {"status": "Overdue"})
-	open_tickets = frappe.db.count(
-		"CB Maintenance Ticket", {"status": ["in", ["Open", "In Progress"]]}
-	)
-	unassigned_tickets = frappe.db.count(
-		"CB Maintenance Ticket", {"assigned_to": ["is", "not set"], "status": ["!=", "Closed"]}
-	)
-	due_this_week = frappe.db.count(
-		"CB PM Work Order",
-		{
-			"status": ["in", ["Open", "Overdue"]],
-			"due_date": ["between", [today(), add_days(today(), 7)]],
-		},
-	)
+	"""Fast summary counts — single query, short-lived cache."""
+	cached = frappe.cache.get_value(CACHE_KEY)
+	if cached:
+		return cached
 
-	return {
-		"outlets": frappe.db.count("CB Outlet"),
-		"assets": frappe.db.count("CB Asset"),
-		"pm_rules": frappe.db.count("CB PM Schedule Rule", {"is_active": 1}),
-		"pm_open": open_pm,
-		"pm_overdue": overdue_pm,
-		"pm_due_week": due_this_week,
-		"tickets_open": open_tickets,
-		"tickets_unassigned": unassigned_tickets,
-		"staff": frappe.db.count("CB Maintenance Staff", {"is_active": 1}),
-	}
+	row = frappe.db.sql(
+		"""
+		SELECT
+			(SELECT COUNT(*) FROM `tabCB Outlet`) AS outlets,
+			(SELECT COUNT(*) FROM `tabCB Asset`) AS assets,
+			(SELECT COUNT(*) FROM `tabCB PM Schedule Rule` WHERE is_active = 1) AS pm_rules,
+			(SELECT COUNT(*) FROM `tabCB PM Work Order` WHERE status = 'Open') AS pm_open,
+			(SELECT COUNT(*) FROM `tabCB PM Work Order` WHERE status = 'Overdue') AS pm_overdue,
+			(SELECT COUNT(*) FROM `tabCB PM Work Order`
+				WHERE status IN ('Open', 'Overdue')
+				AND due_date BETWEEN %(today)s AND %(week_end)s) AS pm_due_week,
+			(SELECT COUNT(*) FROM `tabCB Maintenance Ticket`
+				WHERE status IN ('Open', 'In Progress')) AS tickets_open,
+			(SELECT COUNT(*) FROM `tabCB Maintenance Ticket`
+				WHERE assigned_to IS NULL AND status != 'Closed') AS tickets_unassigned,
+			(SELECT COUNT(*) FROM `tabCB Maintenance Staff` WHERE is_active = 1) AS staff
+		""",
+		{"today": today(), "week_end": add_days(today(), 7)},
+		as_dict=True,
+	)[0]
+
+	frappe.cache.set_value(CACHE_KEY, row, expires_in_sec=CACHE_TTL)
+	return row

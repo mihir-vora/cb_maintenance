@@ -121,6 +121,9 @@ def complete_pm_work_order(work_order: str, notes: str | None = None, failed: in
 		doc.save(ignore_permissions=True)
 		_schedule_next_work_order(doc)
 
+	from cb_maintenance.cb_maintenance.utils.dashboard import clear_dashboard_cache
+
+	clear_dashboard_cache()
 	return doc.name
 
 

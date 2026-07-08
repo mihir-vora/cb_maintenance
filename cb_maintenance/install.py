@@ -38,26 +38,43 @@ def after_install():
 
 def after_migrate():
 	setup_ui_defaults()
+	try:
+		from cb_maintenance.cb_maintenance.utils.dashboard import get_dashboard_stats
+
+		get_dashboard_stats()
+	except Exception:
+		pass
 
 
 def setup_ui_defaults():
-	"""Send reviewers to the guided maintenance home screen."""
+	"""Hide legacy workspace; single entry is CB Maintenance desk page."""
 	_migrate_workspace_name()
-	workspace = "CB Maintenance"
-	if not frappe.db.exists("Workspace", workspace):
-		workspace = "Maintenance Home"
-	if not frappe.db.exists("Workspace", workspace):
-		return
-	for user in frappe.get_all(
-		"User",
-		filters={"enabled": 1, "name": ["not in", ["Guest", "Administrator"]]},
-		pluck="name",
-	):
-		frappe.db.set_value("User", user, "default_workspace", workspace, update_modified=False)
-	frappe.db.set_value(
-		"User", "Administrator", "default_workspace", workspace, update_modified=False
-	)
+	_hide_legacy_workspace()
+	_hide_legacy_pages()
+	# Clear default workspace so login does not land on hidden workspace
+	for user in frappe.get_all("User", filters={"enabled": 1}, pluck="name"):
+		if frappe.db.get_value("User", user, "default_workspace") in (
+			"CB Maintenance",
+			"Maintenance Home",
+		):
+			frappe.db.set_value("User", user, "default_workspace", "", update_modified=False)
 	frappe.db.commit()
+
+
+def _hide_legacy_workspace():
+	if frappe.db.exists("Workspace", "CB Maintenance"):
+		frappe.db.set_value("Workspace", "CB Maintenance", "is_hidden", 1, update_modified=False)
+	if frappe.db.exists("Workspace", "Maintenance Home"):
+		frappe.db.set_value("Workspace", "Maintenance Home", "is_hidden", 1, update_modified=False)
+
+
+def _hide_legacy_pages():
+	"""Remove duplicate sidebar entry; cb-maintenance is the single hub."""
+	if frappe.db.exists("Page", "maintenance-home"):
+		try:
+			frappe.delete_doc("Page", "maintenance-home", force=1, ignore_permissions=True)
+		except Exception:
+			pass
 
 
 def _migrate_workspace_name():

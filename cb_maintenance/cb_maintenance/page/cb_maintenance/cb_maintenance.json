@@ -3,13 +3,13 @@
  "creation": "2026-06-25 12:00:00.000000",
  "docstatus": 0,
  "doctype": "Page",
- "icon": "fa fa-home",
+ "icon": "fa fa-wrench",
  "modified": "2026-06-25 12:00:00.000000",
  "modified_by": "Administrator",
  "module": "CB Maintenance",
- "name": "maintenance-home",
+ "name": "cb-maintenance",
  "owner": "Administrator",
- "page_name": "maintenance-home",
+ "page_name": "cb-maintenance",
  "roles": [
   {"role": "System Manager"},
   {"role": "Desk User"}
@@ -18,5 +18,5 @@
  "standard": "Yes",
  "style": null,
  "system_page": 0,
- "title": "Maintenance Home"
+ "title": "CB Maintenance"
 }

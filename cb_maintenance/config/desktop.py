@@ -12,24 +12,10 @@ def get_data():
 		},
 		{
 			"type": "link",
-			"name": "maintenance-home",
-			"label": _("Maintenance Home — Guide"),
-			"link": "/app/maintenance-home",
+			"name": "cb-maintenance",
+			"label": _("CB Maintenance"),
+			"link": "/app/cb-maintenance",
 			"onboard": 1,
-			"description": _("Founder walkthrough — how PM and tickets work"),
-		},
-		{
-			"type": "link",
-			"name": "pm-work-orders",
-			"label": _("Due PM Tasks"),
-			"link": "List/CB PM Work Order",
-			"description": _("Step 2 — complete preventive maintenance"),
-		},
-		{
-			"type": "link",
-			"name": "maintenance-tickets",
-			"label": _("Maintenance Tickets"),
-			"link": "List/CB Maintenance Ticket",
-			"description": _("Step 3 — reactive breakdown tickets"),
+			"description": _("Maintenance operations — PM, tickets, and guided workflow"),
 		},
 	]
