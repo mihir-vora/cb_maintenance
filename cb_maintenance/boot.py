@@ -12,4 +12,4 @@ def has_app_permission():
 
 
 def extend_bootinfo(bootinfo):
-	bootinfo.cb_maintenance_home = "/app/maintenance-home"
+	bootinfo.cb_maintenance_home = "/app/cb-maintenance"

@@ -86,13 +86,19 @@ def _create_work_order_if_missing(asset, rule_name, task, frequency):
 
 
 def mark_overdue_work_orders():
+	from cb_maintenance.cb_maintenance.utils.dashboard import clear_dashboard_cache
+
+	changed = False
 	for name in frappe.get_all(
 		"CB PM Work Order",
 		filters={"status": "Open", "due_date": ["<", today()]},
 		pluck="name",
 	):
 		frappe.db.set_value("CB PM Work Order", name, "status", "Overdue", update_modified=False)
+		changed = True
 	frappe.db.commit()
+	if changed:
+		clear_dashboard_cache()
 
 
 @frappe.whitelist()
@@ -219,6 +225,8 @@ def suggest_spare_part(ticket_category: str | None = None, asset_type: str | Non
 @frappe.whitelist()
 def assign_ticket_to_zonal_staff(ticket: str, silent: int = 0):
 	"""Route ticket to maintenance staff at the outlet's zonal office."""
+	from cb_maintenance.cb_maintenance.utils.dashboard import clear_dashboard_cache
+
 	doc = frappe.get_doc("CB Maintenance Ticket", ticket)
 	outlet = frappe.get_doc("CB Outlet", doc.outlet)
 	if not outlet.zonal_office:
@@ -236,6 +244,7 @@ def assign_ticket_to_zonal_staff(ticket: str, silent: int = 0):
 	if staff:
 		doc.assigned_to = staff[0].name
 		doc.save(ignore_permissions=True)
+		clear_dashboard_cache()
 		if not silent:
 			frappe.msgprint(_("Assigned to {0}").format(staff[0].full_name))
 	elif not silent:
