@@ -30,10 +30,10 @@ const CB_ZONE_LIST = {
 };
 
 frappe.listview_settings["CB Zonal Office"] = {
-	formatters: {
-		office_name: cb_maintenance.list_ux.formatters.name_cell,
-		city_code: cb_maintenance.list_ux.formatters.outlet,
-	},
+	formatters: cb_maintenance.list_ux.lazy_formatters_map({
+		office_name: "name_cell",
+		city_code: "outlet",
+	}),
 	onload(listview) {
 		cb_maintenance.list_ux.setup(listview, CB_ZONE_LIST);
 	},

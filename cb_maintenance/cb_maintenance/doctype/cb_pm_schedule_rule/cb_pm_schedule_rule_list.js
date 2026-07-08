@@ -43,12 +43,12 @@ frappe.listview_settings["CB PM Schedule Rule"] = {
 			? [__("Active"), "green", "is_active,=,1"]
 			: [__("Inactive"), "gray", "is_active,=,0"];
 	},
-	formatters: {
-		rule_name: cb_maintenance.list_ux.formatters.name_cell,
-		task: cb_maintenance.list_ux.formatters.task,
-		asset_type: cb_maintenance.list_ux.formatters.outlet,
-		is_active: cb_maintenance.list_ux.formatters.active_flag,
-	},
+	formatters: cb_maintenance.list_ux.lazy_formatters_map({
+		rule_name: "name_cell",
+		task: "task",
+		asset_type: "outlet",
+		is_active: "active_flag",
+	}),
 	onload(listview) {
 		cb_maintenance.list_ux.setup(listview, CB_RULE_LIST);
 	},

@@ -43,12 +43,12 @@ frappe.listview_settings["CB Maintenance Staff"] = {
 			? [__(doc.job_title || __("Active")), "blue", "is_active,=,1"]
 			: [__("Inactive"), "gray", "is_active,=,0"];
 	},
-	formatters: {
-		employee_no: cb_maintenance.list_ux.formatters.outlet,
-		full_name: cb_maintenance.list_ux.formatters.name_cell,
-		job_title: cb_maintenance.list_ux.formatters.task,
-		zonal_office: cb_maintenance.list_ux.formatters.outlet,
-	},
+	formatters: cb_maintenance.list_ux.lazy_formatters_map({
+		employee_no: "outlet",
+		full_name: "name_cell",
+		job_title: "task",
+		zonal_office: "outlet",
+	}),
 	onload(listview) {
 		cb_maintenance.list_ux.setup(listview, CB_STAFF_LIST);
 	},

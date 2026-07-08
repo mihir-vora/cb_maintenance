@@ -35,11 +35,11 @@ const CB_PART_LIST = {
 };
 
 frappe.listview_settings["CB Spare Part"] = {
-	formatters: {
-		part_code: cb_maintenance.list_ux.formatters.outlet,
-		part_name: cb_maintenance.list_ux.formatters.name_cell,
-		category: cb_maintenance.list_ux.formatters.task,
-	},
+	formatters: cb_maintenance.list_ux.lazy_formatters_map({
+		part_code: "outlet",
+		part_name: "name_cell",
+		category: "task",
+	}),
 	onload(listview) {
 		cb_maintenance.list_ux.setup(listview, CB_PART_LIST);
 	},

@@ -43,11 +43,11 @@ frappe.listview_settings["CB Asset"] = {
 			? [__("Active"), "green", "is_active,=,1"]
 			: [__("Inactive"), "gray", "is_active,=,0"];
 	},
-	formatters: {
-		asset_name: cb_maintenance.list_ux.formatters.name_cell,
-		outlet: cb_maintenance.list_ux.formatters.outlet,
-		asset_type: cb_maintenance.list_ux.formatters.task,
-	},
+	formatters: cb_maintenance.list_ux.lazy_formatters_map({
+		asset_name: "name_cell",
+		outlet: "outlet",
+		asset_type: "task",
+	}),
 	onload(listview) {
 		cb_maintenance.list_ux.setup(listview, CB_ASSET_LIST);
 	},

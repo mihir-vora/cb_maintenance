@@ -43,12 +43,12 @@ frappe.listview_settings["CB Outlet"] = {
 			? [__(doc.city || __("Active")), "green", `city,=,${doc.city}`]
 			: [__("Inactive"), "gray", "is_active,=,0"];
 	},
-	formatters: {
-		outlet_code: cb_maintenance.list_ux.formatters.outlet,
-		city: cb_maintenance.list_ux.formatters.name_cell,
-		zonal_office: cb_maintenance.list_ux.formatters.task,
-		is_active: cb_maintenance.list_ux.formatters.active_flag,
-	},
+	formatters: cb_maintenance.list_ux.lazy_formatters_map({
+		outlet_code: "outlet",
+		city: "name_cell",
+		zonal_office: "task",
+		is_active: "active_flag",
+	}),
 	onload(listview) {
 		cb_maintenance.list_ux.setup(listview, CB_OUTLET_LIST);
 	},

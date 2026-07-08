@@ -69,12 +69,12 @@ frappe.listview_settings["CB PM Work Order"] = {
 		};
 		return map[doc.status] || [doc.status, "gray", `status,=,${doc.status}`];
 	},
-	formatters: {
-		due_date: cb_maintenance.list_ux.formatters.due_date,
-		outlet: cb_maintenance.list_ux.formatters.outlet,
-		task: cb_maintenance.list_ux.formatters.task,
-		asset: cb_maintenance.list_ux.formatters.name_cell,
-	},
+	formatters: cb_maintenance.list_ux.lazy_formatters_map({
+		due_date: "due_date",
+		outlet: "outlet",
+		task: "task",
+		asset: "name_cell",
+	}),
 	onload(listview) {
 		cb_maintenance.list_ux.setup(listview, CB_PM_LIST);
 	},

@@ -30,9 +30,9 @@ const CB_ASSET_TYPE_LIST = {
 };
 
 frappe.listview_settings["CB Asset Type"] = {
-	formatters: {
-		asset_type_name: cb_maintenance.list_ux.formatters.name_cell,
-	},
+	formatters: cb_maintenance.list_ux.lazy_formatters_map({
+		asset_type_name: "name_cell",
+	}),
 	onload(listview) {
 		cb_maintenance.list_ux.setup(listview, CB_ASSET_TYPE_LIST);
 	},

@@ -7,22 +7,55 @@ cb_maintenance.list_ux.setup = function (listview, config) {
 	cb_maintenance.list_ux._render_shell(listview, config);
 	cb_maintenance.list_ux._bind_filters(listview, config);
 	cb_maintenance.list_ux._bind_dashboard_link(listview);
-	listview.page.add_menu_item(__("Maintenance Home"), () => frappe.set_route("cb-maintenance"), true);
+	try {
+		listview.page.add_menu_item(__("Maintenance Home"), () => frappe.set_route("cb-maintenance"), true);
+	} catch (e) {
+		/* menu API differs across Frappe versions */
+	}
 	if (config.on_refresh) {
-		config.on_refresh(listview, (stats) => cb_maintenance.list_ux._update_stats(listview, config.shell_id, stats));
+		config.on_refresh(listview, (stats) =>
+			cb_maintenance.list_ux._update_stats(listview, config.shell_id, stats)
+		);
 	}
 };
 
 cb_maintenance.list_ux.refresh = function (listview, config) {
+	cb_maintenance.list_ux._render_shell(listview, config);
 	if (config.on_refresh) {
-		config.on_refresh(listview, (stats) => cb_maintenance.list_ux._update_stats(listview, config.shell_id, stats));
+		config.on_refresh(listview, (stats) =>
+			cb_maintenance.list_ux._update_stats(listview, config.shell_id, stats)
+		);
 	}
 };
 
-cb_maintenance.list_ux._render_shell = function (listview, config) {
-	const shell_id = config.shell_id;
-	if (listview.page.main.find(`#${shell_id}`).length) return;
+cb_maintenance.list_ux.lazy_formatters = function (...keys) {
+	const formatters = {};
+	keys.forEach((key) => {
+		formatters[key] = function (value) {
+			const fn = cb_maintenance.list_ux.formatters[key];
+			return fn ? fn(value) : value;
+		};
+	});
+	return formatters;
+};
 
+cb_maintenance.list_ux.lazy_formatters_map = function (field_map) {
+	const formatters = {};
+	Object.entries(field_map).forEach(([field, formatter_key]) => {
+		formatters[field] = function (value) {
+			const fn = cb_maintenance.list_ux.formatters[formatter_key];
+			return fn ? fn(value) : value;
+		};
+	});
+	return formatters;
+};
+
+cb_maintenance.list_ux._page_root = function (listview) {
+	return listview.page?.main || listview.$page || $(listview.page?.body);
+};
+
+cb_maintenance.list_ux._build_shell = function (config) {
+	const shell_id = config.shell_id;
 	const stats_html = (config.stats || [])
 		.map(
 			(s) => `
@@ -40,7 +73,7 @@ cb_maintenance.list_ux._render_shell = function (listview, config) {
 		)
 		.join("");
 
-	const $shell = $(`
+	return $(`
 		<div id="${shell_id}" class="cb-list-shell">
 			<div class="cb-list-hero">
 				<div class="cb-list-hero-copy">
@@ -56,8 +89,47 @@ cb_maintenance.list_ux._render_shell = function (listview, config) {
 			</div>
 		</div>
 	`);
+};
 
-	listview.page.main.find(".frappe-list").before($shell);
+cb_maintenance.list_ux._insert_shell = function (listview, $shell) {
+	const $page = cb_maintenance.list_ux._page_root(listview);
+	if (!$page || !$page.length) return false;
+
+	const anchors = [
+		".frappe-list",
+		".list-view-container",
+		".result-list",
+		".page-form",
+		".layout-main-section",
+	];
+	for (const selector of anchors) {
+		const $anchor = $page.find(selector).first();
+		if ($anchor.length) {
+			$anchor.before($shell);
+			return true;
+		}
+	}
+	$page.prepend($shell);
+	return true;
+};
+
+cb_maintenance.list_ux._render_shell = function (listview, config) {
+	const shell_id = config.shell_id;
+	const $page = cb_maintenance.list_ux._page_root(listview);
+	if ($page.find(`#${shell_id}`).length) return;
+
+	const $shell = cb_maintenance.list_ux._build_shell(config);
+
+	const mount = () => cb_maintenance.list_ux._insert_shell(listview, $shell);
+	if (mount()) return;
+
+	let attempts = 0;
+	const timer = setInterval(() => {
+		attempts += 1;
+		if (mount() || attempts >= 30) {
+			clearInterval(timer);
+		}
+	}, 100);
 };
 
 cb_maintenance.list_ux._bind_filters = function (listview, config) {
@@ -65,7 +137,9 @@ cb_maintenance.list_ux._bind_filters = function (listview, config) {
 	const presets = config.filters || [];
 	if (!presets.length) return;
 
-	listview.page.main.on("click", `#${shell_id}-filters .cb-list-filter`, function () {
+	const $page = cb_maintenance.list_ux._page_root(listview);
+	$page.off(`click.cb-list-${shell_id}`);
+	$page.on(`click.cb-list-${shell_id}`, `#${shell_id}-filters .cb-list-filter`, function () {
 		const key = this.dataset.filter;
 		const preset = presets.find((f) => f.key === key);
 		if (!preset || !preset.apply) return;
@@ -76,14 +150,16 @@ cb_maintenance.list_ux._bind_filters = function (listview, config) {
 };
 
 cb_maintenance.list_ux._bind_dashboard_link = function (listview) {
-	listview.page.main.on("click", "[data-route='cb-maintenance']", (e) => {
+	const $page = cb_maintenance.list_ux._page_root(listview);
+	$page.off("click.cb-dashboard-link");
+	$page.on("click.cb-dashboard-link", "[data-route='cb-maintenance']", (e) => {
 		e.preventDefault();
 		frappe.set_route("cb-maintenance");
 	});
 };
 
 cb_maintenance.list_ux._update_stats = function (listview, shell_id, stats) {
-	const $stats = listview.page.main.find(`#${shell_id}-stats`);
+	const $stats = cb_maintenance.list_ux._page_root(listview).find(`#${shell_id}-stats`);
 	if (!$stats.length || !stats) return;
 	Object.entries(stats).forEach(([key, value]) => {
 		$stats.find(`[data-stat="${key}"]`).text(value ?? 0);

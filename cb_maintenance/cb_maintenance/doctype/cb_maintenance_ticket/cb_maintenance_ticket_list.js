@@ -64,11 +64,11 @@ frappe.listview_settings["CB Maintenance Ticket"] = {
 		const colors = { Open: "red", "In Progress": "orange", Resolved: "blue", Closed: "green" };
 		return [__(doc.status), colors[doc.status] || "gray", `status,=,${doc.status}`];
 	},
-	formatters: {
-		subject: cb_maintenance.list_ux.formatters.name_cell,
-		outlet: cb_maintenance.list_ux.formatters.outlet,
-		priority: cb_maintenance.list_ux.formatters.priority,
-	},
+	formatters: cb_maintenance.list_ux.lazy_formatters_map({
+		subject: "name_cell",
+		outlet: "outlet",
+		priority: "priority",
+	}),
 	onload(listview) {
 		cb_maintenance.list_ux.setup(listview, CB_TICKET_LIST);
 	},

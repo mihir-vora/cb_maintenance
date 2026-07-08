@@ -35,11 +35,11 @@ const CB_CATEGORY_LIST = {
 };
 
 frappe.listview_settings["CB Ticket Category"] = {
-	formatters: {
-		department: cb_maintenance.list_ux.formatters.outlet,
-		category: cb_maintenance.list_ux.formatters.name_cell,
-		sub_category_1: cb_maintenance.list_ux.formatters.task,
-	},
+	formatters: cb_maintenance.list_ux.lazy_formatters_map({
+		department: "outlet",
+		category: "name_cell",
+		sub_category_1: "task",
+	}),
 	onload(listview) {
 		cb_maintenance.list_ux.setup(listview, CB_CATEGORY_LIST);
 	},
