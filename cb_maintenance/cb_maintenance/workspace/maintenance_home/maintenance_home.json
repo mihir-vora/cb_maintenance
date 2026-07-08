@@ -1,0 +1,213 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"hdrWelcome\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>California Burrito Maintenance</b></span>\",\"col\":12}},{\"id\":\"hdrWorkflow\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h6 text-muted\\\">Daily workflow</span>\",\"col\":12}},{\"id\":\"scHome\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Maintenance Home\",\"col\":4}},{\"id\":\"scOverdue\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Overdue PM\",\"col\":4}},{\"id\":\"scTickets\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Open Tickets\",\"col\":4}}]",
+ "creation": "2026-06-25 12:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "tool",
+ "indicator_color": "orange",
+ "is_hidden": 0,
+ "label": "Maintenance Home",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Step 1 — PM Program (set once)",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "PM Schedule Rules",
+   "link_count": 0,
+   "link_to": "CB PM Schedule Rule",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Asset Types",
+   "link_count": 0,
+   "link_to": "CB Asset Type",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Assets",
+   "link_count": 0,
+   "link_to": "CB Asset",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Step 2 — Complete PM",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "PM Work Orders",
+   "link_count": 0,
+   "link_to": "CB PM Work Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Step 3 — Tickets",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Maintenance Tickets",
+   "link_count": 0,
+   "link_to": "CB Maintenance Ticket",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Ticket Categories",
+   "link_count": 0,
+   "link_to": "CB Ticket Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Spare Parts",
+   "link_count": 0,
+   "link_to": "CB Spare Part",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Organization",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Outlets",
+   "link_count": 0,
+   "link_to": "CB Outlet",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Zonal Offices",
+   "link_count": 0,
+   "link_to": "CB Zonal Office",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Maintenance Staff",
+   "link_count": 0,
+   "link_to": "CB Maintenance Staff",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-06-25 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "CB Maintenance",
+ "name": "Maintenance Home",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Orange",
+   "doc_view": "",
+   "format": "",
+   "icon": "home",
+   "label": "Maintenance Home",
+   "link_to": "maintenance-home",
+   "stats_filter": "",
+   "type": "Page"
+  },
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "format": "{} Overdue",
+   "label": "Overdue PM",
+   "link_to": "CB PM Work Order",
+   "stats_filter": "{\"status\":\"Overdue\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Yellow",
+   "doc_view": "List",
+   "format": "{} Open",
+   "label": "Open PM",
+   "link_to": "CB PM Work Order",
+   "stats_filter": "{\"status\":\"Open\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "format": "{} Open",
+   "label": "Open Tickets",
+   "link_to": "CB Maintenance Ticket",
+   "stats_filter": "{\"status\":\"Open\"}",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "",
+   "label": "New Ticket",
+   "link_to": "CB Maintenance Ticket",
+   "stats_filter": "",
+   "type": "DocType"
+  }
+ ],
+ "title": "Maintenance Home"
+}

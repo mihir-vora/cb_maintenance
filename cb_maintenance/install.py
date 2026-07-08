@@ -33,6 +33,28 @@ def after_install():
 		frappe.msgprint("CB Maintenance seed data imported successfully.")
 	finally:
 		frappe.flags.cb_maintenance_seed = False
+	setup_ui_defaults()
+
+
+def after_migrate():
+	setup_ui_defaults()
+
+
+def setup_ui_defaults():
+	"""Send reviewers to the guided maintenance home screen."""
+	if not frappe.db.exists("Workspace", "Maintenance Home"):
+		return
+	for user in frappe.get_all(
+		"User",
+		filters={"enabled": 1, "name": ["not in", ["Guest", "Administrator"]]},
+		pluck="name",
+	):
+		frappe.db.set_value("User", user, "default_workspace", "Maintenance Home", update_modified=False)
+	# Always set for Administrator (demo / reviewer login)
+	frappe.db.set_value(
+		"User", "Administrator", "default_workspace", "Maintenance Home", update_modified=False
+	)
+	frappe.db.commit()
 
 
 def _load_json(name: str):

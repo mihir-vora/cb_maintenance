@@ -4,9 +4,22 @@ app_publisher = "California Burrito Case"
 app_description = "Preventive and reactive maintenance operations for multi-outlet restaurants"
 app_email = "er.voramihir@gmail.com"
 app_license = "MIT"
-app_version = "0.0.1"
+app_version = "0.0.2"
 
 required_apps = ["frappe"]
+
+app_include_css = "/assets/cb_maintenance/css/cb_maintenance.css"
+
+add_to_apps_screen = [
+	{
+		"name": "cb_maintenance",
+		"title": "CB Maintenance",
+		"route": "/app/maintenance-home",
+		"has_permission": "cb_maintenance.boot.has_app_permission",
+	}
+]
+
+after_migrate = "cb_maintenance.install.after_migrate"
 
 scheduler_events = {
 	"daily": [

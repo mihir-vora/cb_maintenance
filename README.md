@@ -4,6 +4,18 @@
 
 Maintenance operations system for California Burrito: preventive maintenance (PM) scheduling and reactive tickets.
 
+## Reviewer walkthrough (3 steps)
+
+After login, open **CB Maintenance** in the app switcher (or go to **Maintenance Home** in the sidebar).
+
+| Step | What to do | Where |
+|------|------------|--------|
+| **1. Define PM** | See how rules are set once per equipment type | Maintenance Home → **View PM Rules** |
+| **2. Complete PM** | Open a due task → **Mark Done** or **Fail & Raise Ticket** | **Open PM Tasks** or **Overdue PM** |
+| **3. Handle tickets** | Track breakdowns; use **Start Work → Resolved → Close** | **Open Tickets** |
+
+The home page shows live counts (overdue PM, open tickets, outlets) and a visual data-flow diagram.
+
 ## Features (v1)
 
 - **PM program once, roll everywhere** — `CB PM Schedule Rule` defines tasks per asset type; work orders generate for all matching assets.
