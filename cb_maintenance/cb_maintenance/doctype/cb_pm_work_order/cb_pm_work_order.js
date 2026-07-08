@@ -1,32 +1,40 @@
 frappe.ui.form.on("CB PM Work Order", {
 	refresh(frm) {
-		if (frm.is_new()) {
-			show_pm_guide(frm, __("New work orders are usually auto-created from PM rules. Use this form only for manual exceptions."));
-			return;
+		const is_new = frm.is_new();
+		const badges = [];
+		if (!is_new && frm.doc.status) {
+			badges.push({ label: frm.doc.status, tone: cb_maintenance.form_ux.status_tone(frm.doc.status) });
 		}
 
-		if (frm.doc.status === "Open" || frm.doc.status === "Overdue") {
-			const status_note =
-				frm.doc.status === "Overdue"
-					? __("This task is <strong>overdue</strong>. Complete it or raise a ticket if blocked.")
-					: __("This PM task is <strong>due</strong>. Mark done after on-site inspection.");
-
-			show_pm_guide(frm, status_note);
-
-			frm.add_custom_button(__("Mark Done"), () => complete_pm(frm, 0), __("Actions"));
-			frm.add_custom_button(
-				__("Fail & Raise Ticket"),
-				() => complete_pm(frm, 1),
-				__("Actions")
-			);
+		let message = "";
+		if (is_new) {
+			message = __("New work orders are usually auto-created from PM rules. Use this form only for manual exceptions.");
+		} else if (frm.doc.status === "Overdue") {
+			message = __("This task is overdue. Complete it on site or raise a ticket if blocked.");
+		} else if (frm.doc.status === "Open") {
+			message = __("PM task is due. Mark done after on-site inspection.");
 		} else if (frm.doc.status === "Completed") {
-			show_pm_guide(
-				frm,
-				__("Completed on {0} by {1}. Next occurrence is scheduled automatically.", [
-					frm.doc.completed_on || "—",
-					frm.doc.completed_by_staff || "—",
-				])
-			);
+			message = __("Completed on {0} by {1}. Next occurrence is scheduled automatically.", [
+				frm.doc.completed_on || "—",
+				frm.doc.completed_by_staff || "—",
+			]);
+		}
+
+		cb_maintenance.form_ux.setup(frm, {
+			kicker: __("Step 2 · Execute PM"),
+			title: is_new ? __("New PM work order") : frm.doc.task || frm.doc.name,
+			description: is_new
+				? __("Manual exception entry — prefer auto-generated work orders from PM rules.")
+				: [frm.doc.outlet, frm.doc.asset].filter(Boolean).join(" · "),
+			message,
+			badges,
+		});
+
+		if (is_new) return;
+
+		if (frm.doc.status === "Open" || frm.doc.status === "Overdue") {
+			frm.add_custom_button(__("Mark Done"), () => complete_pm(frm, 0), __("Actions"));
+			frm.add_custom_button(__("Fail & Raise Ticket"), () => complete_pm(frm, 1), __("Actions"));
 		}
 
 		if (frm.doc.asset) {
@@ -36,16 +44,6 @@ frappe.ui.form.on("CB PM Work Order", {
 		}
 	},
 });
-
-function show_pm_guide(frm, message) {
-	const $guide = $(`
-		<div class="cb-form-guide">
-			<strong>Step 2 — Complete PM:</strong> ${message}
-		</div>
-	`);
-	frm.layout.wrapper.find(".cb-form-guide").remove();
-	frm.layout.wrapper.prepend($guide);
-}
 
 function complete_pm(frm, failed) {
 	const title = failed ? __("Fail inspection & raise ticket") : __("Mark PM as done");
@@ -68,17 +66,10 @@ function complete_pm(frm, failed) {
 				args: { work_order: frm.doc.name, notes: values.notes, failed },
 				freeze: true,
 				callback() {
-					if (failed) {
-						frappe.show_alert({
-							message: __("Ticket created from failed PM"),
-							indicator: "orange",
-						});
-					} else {
-						frappe.show_alert({
-							message: __("PM completed — next due date scheduled"),
-							indicator: "green",
-						});
-					}
+					frappe.show_alert({
+						message: failed ? __("Ticket created from failed PM") : __("PM completed — next due date scheduled"),
+						indicator: failed ? "orange" : "green",
+					});
 					frm.reload_doc();
 				},
 			});

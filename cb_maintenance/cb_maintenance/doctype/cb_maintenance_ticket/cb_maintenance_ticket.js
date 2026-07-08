@@ -1,19 +1,29 @@
 frappe.ui.form.on("CB Maintenance Ticket", {
 	refresh(frm) {
-		if (frm.is_new()) {
-			show_ticket_guide(
-				frm,
-				__("Fill outlet, asset, and category. Staff assignment and spare-part hints are automatic.")
-			);
-			return;
+		const is_new = frm.is_new();
+		const badges = [];
+		if (!is_new && frm.doc.status) {
+			badges.push({ label: frm.doc.status, tone: cb_maintenance.form_ux.status_tone(frm.doc.status) });
+		}
+		if (!is_new && frm.doc.priority) {
+			badges.push({ label: frm.doc.priority, tone: cb_maintenance.form_ux.status_tone(frm.doc.priority) });
 		}
 
-		show_ticket_guide(
-			frm,
-			__(
-				"<strong>Step 3 — Handle ticket:</strong> Assign staff, update status as work progresses, and close when resolved."
-			)
-		);
+		cb_maintenance.form_ux.setup(frm, {
+			kicker: __("Step 3 · Handle tickets"),
+			title: is_new ? __("New maintenance ticket") : frm.doc.subject || frm.doc.name,
+			description: is_new
+				? __("Log a reactive breakdown. Outlet, asset, and category drive routing and spare-part hints.")
+				: [frm.doc.outlet, frm.doc.asset].filter(Boolean).join(" · ") || frm.doc.name,
+			message: is_new
+				? __("Fill outlet, asset, and category. Staff assignment and spare-part hints are automatic.")
+				: __(
+						"Assign staff, update status as work progresses, and close when resolved. Use action buttons on the right."
+				  ),
+			badges,
+		});
+
+		if (is_new) return;
 
 		if (frm.doc.status === "Open" && !frm.doc.assigned_to) {
 			frm.add_custom_button(__("Assign to Zonal Staff"), () => {
@@ -63,12 +73,6 @@ frappe.ui.form.on("CB Maintenance Ticket", {
 		});
 	},
 });
-
-function show_ticket_guide(frm, message) {
-	const $guide = $(`<div class="cb-form-guide">${message}</div>`);
-	frm.layout.wrapper.find(".cb-form-guide").remove();
-	frm.layout.wrapper.prepend($guide);
-}
 
 function set_status(frm, status) {
 	frm.set_value("status", status);
