@@ -265,6 +265,10 @@
 	display: block;
 }
 
+.cb-shortcuts.is-open[hidden] {
+	display: block;
+}
+
 .cb-shortcuts-card {
 	background: var(--cb-surface);
 	border: 1px solid var(--cb-border);

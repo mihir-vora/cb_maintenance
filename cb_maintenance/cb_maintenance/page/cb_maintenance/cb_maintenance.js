@@ -1,20 +1,40 @@
 /* CB Maintenance — portfolio-quality operations dashboard */
 frappe.pages["cb-maintenance"].on_page_load = function (wrapper) {
-	const page = frappe.ui.make_app_page({
-		parent: wrapper,
-		title: __("CB Maintenance"),
-		single_column: true,
+	CB.ensure_assets().then(() => {
+		const page = frappe.ui.make_app_page({
+			parent: wrapper,
+			title: __("CB Maintenance"),
+			single_column: true,
+		});
+
+		const $root = $(page.body).addClass("cb-desk");
+		$root.html(CB.template());
+
+		CB.bind($root);
+		CB.load_stats($root);
+		CB.bind_shortcuts($root);
 	});
-
-	const $root = $(page.body).addClass("cb-desk");
-	$root.html(CB.template());
-
-	CB.bind($root);
-	CB.load_stats($root);
-	CB.bind_shortcuts($root);
 };
 
 const CB = {
+	ensure_assets() {
+		const href = "/assets/cb_maintenance/css/cb_maintenance.css";
+		const version = frappe.boot?.versions?.cb_maintenance || "0.0.7";
+		if (document.querySelector(`link[data-cb-maintenance-css="1"]`)) {
+			return Promise.resolve();
+		}
+		return new Promise((resolve) => {
+			const link = document.createElement("link");
+			link.rel = "stylesheet";
+			link.type = "text/css";
+			link.href = `${href}?v=${version}`;
+			link.setAttribute("data-cb-maintenance-css", "1");
+			link.onload = () => resolve();
+			link.onerror = () => resolve();
+			document.head.appendChild(link);
+		});
+	},
+
 	routes: {
 		"pm-overdue": { list: "CB PM Work Order", filters: { status: "Overdue" } },
 		"pm-open": { list: "CB PM Work Order", filters: { status: "Open" } },
@@ -148,14 +168,15 @@ const CB = {
 		} else {
 			this.shortcut_help_open = !this.shortcut_help_open;
 		}
-		$root.find("#cb-shortcuts").toggleClass("is-open", this.shortcut_help_open);
+		const open = this.shortcut_help_open;
+		$root.find("#cb-shortcuts").toggleClass("is-open", open).prop("hidden", !open);
 	},
 
 	filter_content($root, term) {
 		const q = term.trim().toLowerCase();
 		if (!q) {
 			$root.find("[data-searchable]").removeClass("is-hidden");
-			$root.find("#cb-search-empty").removeClass("is-visible");
+			$root.find("#cb-search-empty").removeClass("is-visible").prop("hidden", true);
 			return;
 		}
 		let visible = 0;
@@ -165,7 +186,7 @@ const CB = {
 			$(el).toggleClass("is-hidden", !match);
 			if (match) visible += 1;
 		});
-		$root.find("#cb-search-empty").toggleClass("is-visible", visible === 0);
+		$root.find("#cb-search-empty").toggleClass("is-visible", visible === 0).prop("hidden", visible !== 0);
 	},
 
 	load_stats($root) {
@@ -433,11 +454,11 @@ const CB = {
 					"Keyboard shortcuts"
 				)}">?</button>
 			</nav>
-			<div id="cb-search-empty" class="cb-search-empty">${__(
+			<div id="cb-search-empty" class="cb-search-empty" hidden>${__(
 				"No matches found for this search term."
 			)}</div>
 
-			<div id="cb-shortcuts" class="cb-shortcuts">
+			<div id="cb-shortcuts" class="cb-shortcuts" hidden>
 				<div class="cb-shortcuts-card">
 					<div class="cb-shortcuts-head">
 						<h3>${__("Keyboard shortcuts")}</h3>
