@@ -18,8 +18,8 @@ frappe.pages["cb-maintenance"].on_page_load = function (wrapper) {
 
 const CB = {
 	ensure_assets() {
-		const href = "/assets/cb_maintenance/css/cb_maintenance.css";
-		const version = frappe.boot?.versions?.cb_maintenance || "0.0.7";
+		const href = "/assets/cb_maintenance/css/cb_maintenance.bundle.css";
+		const version = frappe.boot?.versions?.cb_maintenance || "0.0.8";
 		if (document.querySelector(`link[data-cb-maintenance-css="1"]`)) {
 			return Promise.resolve();
 		}
