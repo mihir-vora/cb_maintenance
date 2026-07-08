@@ -4,7 +4,7 @@ app_publisher = "California Burrito Case"
 app_description = "Preventive and reactive maintenance operations for multi-outlet restaurants"
 app_email = "er.voramihir@gmail.com"
 app_license = "MIT"
-app_version = "0.0.5"
+app_version = "0.0.6"
 
 required_apps = ["frappe"]
 

@@ -6,8 +6,6 @@ frappe.pages["cb-maintenance"].on_page_load = function (wrapper) {
 		single_column: true,
 	});
 
-	page.set_primary_action(__("Raise Ticket"), () => CB.go("new-ticket"), "add");
-
 	const $root = $(page.body).addClass("cb-desk");
 	$root.html(CB.template());
 
@@ -207,25 +205,45 @@ const CB = {
 				v: s.pm_overdue,
 				label: __("Overdue PM"),
 				nav: "pm-overdue",
-				warn: (s.pm_overdue || 0) > 0,
+				tone: "danger",
+				icon: "⚠",
 				tip: __("Tasks past due date — action needed"),
 			},
-			{ v: s.pm_open, label: __("Open PM"), nav: "pm-open", tip: __("Preventive tasks pending") },
+			{
+				v: s.pm_open,
+				label: __("Open PM"),
+				nav: "pm-open",
+				tone: "brand",
+				icon: "◷",
+				tip: __("Preventive tasks pending"),
+			},
 			{
 				v: s.tickets_open,
 				label: __("Open Tickets"),
 				nav: "tickets-open",
+				tone: "info",
+				icon: "◎",
 				tip: __("Reactive incidents being handled"),
 			},
-			{ v: s.outlets, label: __("Outlets"), nav: "outlets", tip: __("Stores in the network") },
+			{
+				v: s.outlets,
+				label: __("Outlets"),
+				nav: "outlets",
+				tone: "neutral",
+				icon: "⌂",
+				tip: __("Stores in the network"),
+			},
 		];
 		$root.find("#cb-stats").html(
 			items
 				.map(
 					(x) => `
-				<button type="button" class="cb-metric${x.warn ? " is-warn" : ""}" data-nav="${x.nav}" title="${x.tip}">
-					<span class="cb-metric-val">${x.v ?? 0}</span>
-					<span class="cb-metric-lbl">${x.label}</span>
+				<button type="button" class="cb-stat cb-stat--${x.tone}${(x.v || 0) > 0 && x.tone === "danger" ? " is-alert" : ""}" data-nav="${x.nav}" title="${x.tip}">
+					<span class="cb-stat-icon" aria-hidden="true">${x.icon}</span>
+					<span class="cb-stat-body">
+						<span class="cb-stat-val">${x.v ?? 0}</span>
+						<span class="cb-stat-lbl">${x.label}</span>
+					</span>
 				</button>`
 				)
 				.join("")
@@ -243,12 +261,18 @@ const CB = {
 		const score = s.health_score ?? 0;
 		const tone = score >= 85 ? "good" : score >= 65 ? "ok" : "risk";
 		const label = score >= 85 ? __("Healthy") : score >= 65 ? __("Watchlist") : __("Needs Attention");
+		const color =
+			tone === "good" ? "#16a34a" : tone === "ok" ? "#ca8a04" : "#dc2626";
 		$root.find("#cb-health").html(
-			`<div class="cb-health ${tone}">
-				<div class="cb-health-score">${score}</div>
-				<div class="cb-health-copy">
-					<div class="cb-health-title">${__("Operations Health")}</div>
-					<div class="cb-health-label">${label}</div>
+			`<div class="cb-gauge cb-gauge--${tone}">
+				<div class="cb-gauge-ring" style="--cb-gauge: ${score}; --cb-gauge-color: ${color};">
+					<div class="cb-gauge-inner">
+						<span class="cb-gauge-score">${score}</span>
+					</div>
+				</div>
+				<div class="cb-gauge-copy">
+					<span class="cb-gauge-title">${__("Health Score")}</span>
+					<span class="cb-gauge-label">${label}</span>
 				</div>
 			</div>`
 		);
@@ -266,13 +290,17 @@ const CB = {
 			insights
 				.map((item) => {
 					const type = item.type || "info";
-					return `<article class="cb-insight ${type}" data-searchable>
-						<div class="cb-insight-title">${item.title || __("Insight")}</div>
-						<div class="cb-insight-msg">${item.message || ""}</div>
+					const dot = type === "warning" ? "!" : type === "success" ? "✓" : "i";
+					return `<article class="cb-insight cb-insight--${type}" data-searchable>
+						<div class="cb-insight-icon" aria-hidden="true">${dot}</div>
+						<div class="cb-insight-content">
+							<div class="cb-insight-title">${item.title || __("Insight")}</div>
+							<div class="cb-insight-msg">${item.message || ""}</div>
+						</div>
 						${
 							item.action
-								? `<button type="button" class="cb-btn cb-btn-sm" data-nav="${item.action}">${__(
-										"Open"
+								? `<button type="button" class="cb-btn cb-btn-ghost cb-btn-sm" data-nav="${item.action}">${__(
+										"View"
 								  )}</button>`
 								: ""
 						}
@@ -359,6 +387,27 @@ const CB = {
 
 	template() {
 		return `<div class="cb-app">
+			<header class="cb-top">
+				<div class="cb-brand">
+					<div class="cb-brand-mark" aria-hidden="true">CB</div>
+					<div>
+						<p class="cb-brand-kicker">${__("California Burrito")}</p>
+						<h1 class="cb-brand-title">${__("Maintenance")}</h1>
+					</div>
+				</div>
+				<div class="cb-top-actions">
+					<button type="button" class="cb-chip" data-nav="pm-overdue" title="${__("Alt + O")}">
+						<span class="cb-chip-dot cb-chip-dot--danger"></span>${__("Overdue PM")}
+					</button>
+					<button type="button" class="cb-chip" data-nav="tickets-open" title="${__("Alt + T")}">
+						<span class="cb-chip-dot cb-chip-dot--info"></span>${__("Tickets")}
+					</button>
+					<button type="button" class="cb-btn cb-btn-primary" data-nav="new-ticket" title="${__(
+						"Alt + N"
+					)}">${__("Raise Ticket")}</button>
+				</div>
+			</header>
+
 			<nav class="cb-nav" aria-label="${__("Dashboard navigation")}">
 				<div class="cb-nav-tabs" role="tablist">
 					<button class="cb-nav-tab is-active" data-tab="overview" role="tab" aria-selected="true">${__(
@@ -371,32 +420,19 @@ const CB = {
 						"Features"
 					)}</button>
 					<button class="cb-nav-tab" data-tab="reference" role="tab" aria-selected="false">${__(
-						"Buttons & Fields"
+						"Reference"
 					)}</button>
 				</div>
-				<div class="cb-nav-actions">
-					<button type="button" class="cb-action cb-action-warn" data-nav="pm-overdue" title="${__(
-						"Alt + O"
-					)}">${__("Overdue PM")}</button>
-					<button type="button" class="cb-action" data-nav="tickets-open" title="${__("Alt + T")}">${__(
-						"Open Tickets"
-					)}</button>
-					<button type="button" class="cb-action cb-action-primary" data-nav="new-ticket" title="${__(
-						"Alt + N"
-					)}">${__("+ Raise Ticket")}</button>
-				</div>
-			</nav>
-
-			<section class="cb-toolbar">
 				<div class="cb-search-wrap">
+					<span class="cb-search-icon" aria-hidden="true">⌕</span>
 					<input id="cb-search" class="cb-search" type="search" placeholder="${__(
-						"Search features, steps, actions... (Ctrl/Cmd+K or /)"
+						"Search…  Ctrl+K"
 					)}" />
 				</div>
-				<button type="button" id="cb-shortcuts-btn" class="cb-shortcuts-btn">${__(
-					"Keyboard Shortcuts"
-				)}</button>
-			</section>
+				<button type="button" id="cb-shortcuts-btn" class="cb-icon-chip" title="${__(
+					"Keyboard shortcuts"
+				)}">?</button>
+			</nav>
 			<div id="cb-search-empty" class="cb-search-empty">${__(
 				"No matches found for this search term."
 			)}</div>
@@ -420,31 +456,36 @@ const CB = {
 			</div>
 
 			<div class="cb-panel is-active" data-panel="overview" role="tabpanel">
-				<header class="cb-hero" data-searchable>
-					<div class="cb-hero-copy">
-						<span class="cb-kicker">${__("California Burrito · 133 Outlets")}</span>
-						<h1>${__("CB Maintenance")}</h1>
-						<p class="cb-hero-desc">${__(
-							"One system for preventive maintenance (PM) and reactive repairs. It helps teams plan, execute, and close maintenance loops faster."
+				<section class="cb-hero-grid" data-searchable>
+					<article class="cb-welcome">
+						<p class="cb-eyebrow">${__("Operations desk · 133 outlets")}</p>
+						<h2 class="cb-welcome-title">${__("Plan PM, fix breakdowns, close the loop.")}</h2>
+						<p class="cb-welcome-desc">${__(
+							"Preventive schedules roll out automatically. Overdue work and open tickets surface here so teams act before equipment fails."
 						)}</p>
-					</div>
-					<div id="cb-health"></div>
-					<div class="cb-metrics" id="cb-stats">
+						<div id="cb-health" class="cb-welcome-gauge"></div>
+					</article>
+					<div class="cb-bento" id="cb-stats">
 						<div class="cb-skel"></div><div class="cb-skel"></div>
 						<div class="cb-skel"></div><div class="cb-skel"></div>
 					</div>
-				</header>
+				</section>
 
 				<section class="cb-section" data-searchable>
-					<h2 class="cb-h2">${__("Operational Insights")}</h2>
+					<div class="cb-section-head">
+						<h2 class="cb-h2">${__("Insights")}</h2>
+						<p class="cb-sub">${__("What needs attention right now")}</p>
+					</div>
 					<div id="cb-insights" class="cb-insights"></div>
 				</section>
 
 				<section id="cb-onboarding"></section>
 
 				<section class="cb-section" data-searchable>
-					<h2 class="cb-h2">${__("Daily workflow")}</h2>
-					<p class="cb-sub">${__("Three steps — click any card to jump directly to work.")}</p>
+					<div class="cb-section-head">
+						<h2 class="cb-h2">${__("Workflow")}</h2>
+						<p class="cb-sub">${__("Three steps to run maintenance daily")}</p>
+					</div>
 					<div class="cb-workflow">
 						<article class="cb-wf-card" data-searchable>
 							<span class="cb-wf-step">${__("Step 1")}</span>
@@ -480,7 +521,10 @@ const CB = {
 				</section>
 
 				<section class="cb-section">
-					<h2 class="cb-h2">${__("Priority Queues")}</h2>
+					<div class="cb-section-head">
+						<h2 class="cb-h2">${__("Queues")}</h2>
+						<p class="cb-sub">${__("Oldest overdue PM and unassigned tickets")}</p>
+					</div>
 					<div class="cb-queue-grid">
 						<div class="cb-queue-card" data-searchable>
 							<h3>${__("Overdue PM Queue")}</h3>
@@ -591,7 +635,7 @@ const CB = {
 		return `<article class="cb-feat-card" data-searchable>
 			<h3>${title}</h3>
 			<p>${desc}</p>
-			<button type="button" class="cb-btn cb-btn-sm" data-nav="${nav}">${__("Open")} →</button>
+			<button type="button" class="cb-btn cb-btn-ghost cb-btn-sm" data-nav="${nav}">${__("Open")}</button>
 		</article>`;
 	},
 

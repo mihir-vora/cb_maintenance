@@ -1,6 +1,6 @@
 [project]
 name = "cb_maintenance"
-version = "0.0.5"
+version = "0.0.6"
 authors = [
     { name = "Mihir Vora", email = "er.voramihir@gmail.com" }
 ]
