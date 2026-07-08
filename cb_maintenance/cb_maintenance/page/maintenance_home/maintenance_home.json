@@ -11,7 +11,8 @@
  "owner": "Administrator",
  "page_name": "maintenance-home",
  "roles": [
-  {"role": "System Manager"}
+  {"role": "System Manager"},
+  {"role": "Desk User"}
  ],
  "script": null,
  "standard": "Yes",

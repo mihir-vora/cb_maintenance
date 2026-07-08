@@ -10,14 +10,9 @@ required_apps = ["frappe"]
 
 app_include_css = "/assets/cb_maintenance/css/cb_maintenance.css"
 
-add_to_apps_screen = [
-	{
-		"name": "cb_maintenance",
-		"title": "CB Maintenance",
-		"route": "/app/maintenance-home",
-		"has_permission": "cb_maintenance.boot.has_app_permission",
-	}
-]
+# Do not use add_to_apps_screen on a single-app site — it shows a generic
+# "Select an app" page with a broken logo and an extra click before the desk.
+# Users land on the Maintenance Home workspace instead (see install.setup_ui_defaults).
 
 after_migrate = "cb_maintenance.install.after_migrate"
 

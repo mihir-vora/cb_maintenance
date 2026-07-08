@@ -13,10 +13,10 @@ def get_data():
 		{
 			"type": "link",
 			"name": "maintenance-home",
-			"label": _("Maintenance Home"),
+			"label": _("Maintenance Home — Guide"),
 			"link": "/app/maintenance-home",
 			"onboard": 1,
-			"description": _("Start here — guided 3-step PM + tickets workflow"),
+			"description": _("Founder walkthrough — how PM and tickets work"),
 		},
 		{
 			"type": "link",

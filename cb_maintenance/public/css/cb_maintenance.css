@@ -278,6 +278,119 @@
 	color: #c8550d;
 }
 
+.cb-section-hint {
+	font-size: 13px;
+	color: #5f6368;
+	margin: -8px 0 16px;
+}
+
+/* Founder guidance */
+.cb-founder {
+	margin-bottom: 32px;
+}
+
+.cb-founder-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 16px;
+	margin-bottom: 20px;
+}
+
+.cb-founder-card {
+	background: #fff;
+	border: 1px solid #e8eaed;
+	border-radius: 14px;
+	padding: 20px 22px;
+}
+
+.cb-founder-card h3 {
+	font-size: 15px;
+	font-weight: 600;
+	margin: 0 0 10px;
+	color: #1a1a2e;
+}
+
+.cb-founder-card p {
+	font-size: 13px;
+	line-height: 1.6;
+	color: #3d3d3d;
+	margin: 0;
+}
+
+.cb-founder-list {
+	margin: 0;
+	padding-left: 18px;
+	font-size: 13px;
+	line-height: 1.7;
+	color: #3d3d3d;
+}
+
+.cb-walkthrough {
+	background: #fff;
+	border: 2px solid #c8550d;
+	border-radius: 14px;
+	padding: 22px 24px;
+}
+
+.cb-walkthrough h3 {
+	font-size: 16px;
+	font-weight: 600;
+	margin: 0 0 16px;
+	color: #1a1a2e;
+}
+
+.cb-walkthrough-steps {
+	list-style: none;
+	margin: 0 0 20px;
+	padding: 0;
+}
+
+.cb-walkthrough-steps li {
+	display: flex;
+	gap: 14px;
+	align-items: flex-start;
+	margin-bottom: 14px;
+	font-size: 13px;
+	line-height: 1.55;
+	color: #3d3d3d;
+}
+
+.cb-walk-num {
+	flex-shrink: 0;
+	width: 28px;
+	height: 28px;
+	background: #c8550d;
+	color: #fff;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 13px;
+	font-weight: 700;
+}
+
+.cb-walkthrough-cta {
+	margin-top: 4px;
+}
+
+.cb-step-who {
+	font-size: 11px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: #9aa0a6;
+}
+
+.cb-stat-clickable {
+	cursor: pointer;
+	transition: transform 0.15s, background 0.15s;
+}
+
+.cb-stat-clickable:hover {
+	transform: scale(1.03);
+	background: rgba(255, 255, 255, 0.22);
+}
+
 @media (max-width: 900px) {
 	.cb-hero {
 		grid-template-columns: 1fr;
@@ -288,5 +401,8 @@
 	}
 	.cb-flow-diagram {
 		justify-content: center;
+	}
+	.cb-founder-grid {
+		grid-template-columns: 1fr;
 	}
 }

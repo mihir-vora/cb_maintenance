@@ -42,19 +42,33 @@ def after_migrate():
 
 def setup_ui_defaults():
 	"""Send reviewers to the guided maintenance home screen."""
-	if not frappe.db.exists("Workspace", "Maintenance Home"):
+	_migrate_workspace_name()
+	workspace = "CB Maintenance"
+	if not frappe.db.exists("Workspace", workspace):
+		workspace = "Maintenance Home"
+	if not frappe.db.exists("Workspace", workspace):
 		return
 	for user in frappe.get_all(
 		"User",
 		filters={"enabled": 1, "name": ["not in", ["Guest", "Administrator"]]},
 		pluck="name",
 	):
-		frappe.db.set_value("User", user, "default_workspace", "Maintenance Home", update_modified=False)
-	# Always set for Administrator (demo / reviewer login)
+		frappe.db.set_value("User", user, "default_workspace", workspace, update_modified=False)
 	frappe.db.set_value(
-		"User", "Administrator", "default_workspace", "Maintenance Home", update_modified=False
+		"User", "Administrator", "default_workspace", workspace, update_modified=False
 	)
 	frappe.db.commit()
+
+
+def _migrate_workspace_name():
+	"""Rename legacy workspace so Page shortcut is not confused with workspace name."""
+	if frappe.db.exists("Workspace", "Maintenance Home") and not frappe.db.exists(
+		"Workspace", "CB Maintenance"
+	):
+		try:
+			frappe.rename_doc("Workspace", "Maintenance Home", "CB Maintenance", force=True)
+		except Exception:
+			pass
 
 
 def _load_json(name: str):

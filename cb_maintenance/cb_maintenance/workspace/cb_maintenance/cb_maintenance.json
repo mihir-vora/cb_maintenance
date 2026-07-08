@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"hdrWelcome\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>California Burrito Maintenance</b></span>\",\"col\":12}},{\"id\":\"hdrWorkflow\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h6 text-muted\\\">Daily workflow</span>\",\"col\":12}},{\"id\":\"scHome\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Maintenance Home\",\"col\":4}},{\"id\":\"scOverdue\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Overdue PM\",\"col\":4}},{\"id\":\"scTickets\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Open Tickets\",\"col\":4}}]",
+ "content": "[{\"id\":\"hdrWelcome\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>California Burrito — Operations Desk</b></span>\",\"col\":12}},{\"id\":\"hdrWorkflow\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h6 text-muted\\\">Daily workflow — click a card below</span>\",\"col\":12}},{\"id\":\"scGuide\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Maintenance Home\",\"col\":4}},{\"id\":\"scOverdue\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Overdue PM\",\"col\":4}},{\"id\":\"scTickets\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Open Tickets\",\"col\":4}}]",
  "creation": "2026-06-25 12:00:00.000000",
  "custom_blocks": [],
  "docstatus": 0,
@@ -10,8 +10,27 @@
  "icon": "tool",
  "indicator_color": "orange",
  "is_hidden": 0,
- "label": "Maintenance Home",
+ "label": "CB Maintenance",
  "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Start here",
+   "link_count": 0,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Maintenance Home — Founder Guide",
+   "link_count": 0,
+   "link_to": "maintenance-home",
+   "link_type": "Page",
+   "onboard": 1,
+   "type": "Link"
+  },
   {
    "hidden": 0,
    "is_query_report": 0,
@@ -152,7 +171,7 @@
  "modified": "2026-06-25 12:00:00.000000",
  "modified_by": "Administrator",
  "module": "CB Maintenance",
- "name": "Maintenance Home",
+ "name": "CB Maintenance",
  "number_cards": [],
  "owner": "Administrator",
  "parent_page": "",
@@ -166,7 +185,7 @@
    "color": "Orange",
    "doc_view": "",
    "format": "",
-   "icon": "home",
+   "icon": "book-open",
    "label": "Maintenance Home",
    "link_to": "maintenance-home",
    "stats_filter": "",
@@ -209,5 +228,5 @@
    "type": "DocType"
   }
  ],
- "title": "Maintenance Home"
+ "title": "CB Maintenance"
 }
