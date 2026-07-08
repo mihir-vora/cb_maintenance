@@ -47,9 +47,8 @@ def after_migrate():
 
 
 def setup_ui_defaults():
-	"""Hide legacy workspace; single entry is CB Maintenance desk page."""
-	_migrate_workspace_name()
-	_hide_legacy_workspace()
+	"""Remove legacy workspaces; single entry is the cb-maintenance desk page."""
+	_remove_legacy_workspaces()
 	_hide_legacy_pages()
 	# Clear default workspace so login does not land on hidden workspace
 	for user in frappe.get_all("User", filters={"enabled": 1}, pluck="name"):
@@ -61,11 +60,15 @@ def setup_ui_defaults():
 	frappe.db.commit()
 
 
-def _hide_legacy_workspace():
-	if frappe.db.exists("Workspace", "CB Maintenance"):
-		frappe.db.set_value("Workspace", "CB Maintenance", "is_hidden", 1, update_modified=False)
-	if frappe.db.exists("Workspace", "Maintenance Home"):
-		frappe.db.set_value("Workspace", "Maintenance Home", "is_hidden", 1, update_modified=False)
+def _remove_legacy_workspaces():
+	"""Delete workspaces that collide with the cb-maintenance Page route."""
+	for name in ("CB Maintenance", "Maintenance Home"):
+		if not frappe.db.exists("Workspace", name):
+			continue
+		try:
+			frappe.delete_doc("Workspace", name, force=1, ignore_permissions=True)
+		except Exception:
+			frappe.db.set_value("Workspace", name, "is_hidden", 1, update_modified=False)
 
 
 def _hide_legacy_pages():
@@ -73,17 +76,6 @@ def _hide_legacy_pages():
 	if frappe.db.exists("Page", "maintenance-home"):
 		try:
 			frappe.delete_doc("Page", "maintenance-home", force=1, ignore_permissions=True)
-		except Exception:
-			pass
-
-
-def _migrate_workspace_name():
-	"""Rename legacy workspace so Page shortcut is not confused with workspace name."""
-	if frappe.db.exists("Workspace", "Maintenance Home") and not frappe.db.exists(
-		"Workspace", "CB Maintenance"
-	):
-		try:
-			frappe.rename_doc("Workspace", "Maintenance Home", "CB Maintenance", force=True)
 		except Exception:
 			pass
 

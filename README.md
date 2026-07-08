@@ -119,8 +119,10 @@ python scripts/validate_seed.py
 1. Push this repo to **public GitHub**.
 2. Create a site at [frappecloud.com](https://frappecloud.com) with **Frappe** (ERPNext not required).
 3. **Update bench** → **Install App** → paste your GitHub repo URL → Install.
-4. After install, verify **CB Outlet** (~133 records) and **CB PM Work Order** are populated.
-5. Create a **System Manager** user for reviewers and share URL + credentials.
+4. After each code push: **Update** the site (runs `migrate` + asset build). If the desk still shows the old workspace, run **Clear Cache** from the site dashboard.
+5. After install, verify **CB Outlet** (~133 records) and **CB PM Work Order** are populated.
+6. Open `/app/cb-maintenance` — you should see the tabbed dashboard (Overview, How to Use, Features), not a workspace with three shortcut links.
+7. Create a **System Manager** user for reviewers and share URL + credentials.
 
 **Live instance:** [https://mihir-cb-maintenance.m.frappe.cloud](https://mihir-cb-maintenance.m.frappe.cloud)
 
