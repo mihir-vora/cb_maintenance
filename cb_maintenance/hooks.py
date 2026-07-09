@@ -4,15 +4,16 @@ app_publisher = "California Burrito Case"
 app_description = "Preventive and reactive maintenance operations for multi-outlet restaurants"
 app_email = "er.voramihir@gmail.com"
 app_license = "MIT"
-app_version = "0.1.1"
+app_version = "0.1.2"
 
 required_apps = ["frappe"]
 
 app_include_css = "cb_maintenance/css/cb_maintenance.bundle.css"
 app_include_js = [
-	"cb_maintenance/js/cb_desk_route.js",
 	"cb_maintenance/js/cb_list_ux.js",
 	"cb_maintenance/js/cb_form_ux.js",
+	"cb_maintenance/js/cb_desk_registry.js",
+	"cb_maintenance/js/cb_desk_route.js",
 ]
 extend_bootinfo = "cb_maintenance.boot.extend_bootinfo"
 
