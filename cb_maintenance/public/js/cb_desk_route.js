@@ -8,13 +8,17 @@ const CB_LEGACY_WORKSPACES = new Set([
 	"maintenance home",
 	"maintenance-home",
 ]);
+const CB_SIDEBAR_WORKSPACE_SLUG = "cb-maintenance-desk";
 
 function cb_is_legacy_workspace_route(route) {
 	if (!route || !route.length) return false;
-	if (route[0] === "Workspaces") {
+	const first = String(route[0] || "").toLowerCase();
+	if (first === "workspaces") {
+		const slug = frappe.router.slug(String(route[1] || ""));
+		if (slug === CB_SIDEBAR_WORKSPACE_SLUG) return true;
 		return CB_LEGACY_WORKSPACES.has(String(route[1] || "").toLowerCase());
 	}
-	return false;
+	return first === CB_SIDEBAR_WORKSPACE_SLUG;
 }
 
 function cb_workspace_stole_page() {

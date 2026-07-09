@@ -47,10 +47,11 @@ def after_migrate():
 
 
 def setup_ui_defaults():
-	"""Remove legacy workspaces; single entry is the cb-maintenance desk page."""
+	"""Remove legacy workspaces; expose CB Maintenance in the PUBLIC desk sidebar."""
 	_remove_legacy_workspaces()
+	_ensure_public_sidebar_workspace()
 	_hide_legacy_pages()
-	# Clear default workspace so login does not land on hidden workspace
+	# Clear default workspace so login does not land on hidden legacy workspace
 	for user in frappe.get_all("User", filters={"enabled": 1}, pluck="name"):
 		if frappe.db.get_value("User", user, "default_workspace") in (
 			"CB Maintenance",
@@ -58,6 +59,25 @@ def setup_ui_defaults():
 		):
 			frappe.db.set_value("User", user, "default_workspace", "", update_modified=False)
 	frappe.db.commit()
+
+
+def _ensure_public_sidebar_workspace():
+	"""Keep the sidebar workspace public and ordered before Users (sequence 13)."""
+	name = "CB Maintenance Desk"
+	if not frappe.db.exists("Workspace", name):
+		return
+	frappe.db.set_value(
+		"Workspace",
+		name,
+		{
+			"public": 1,
+			"is_hidden": 0,
+			"sequence_id": 12.0,
+			"label": "CB Maintenance",
+			"title": "CB Maintenance",
+		},
+		update_modified=False,
+	)
 
 
 def _remove_legacy_workspaces():

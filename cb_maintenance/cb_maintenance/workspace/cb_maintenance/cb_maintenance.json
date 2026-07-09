@@ -1,0 +1,120 @@
+{
+ "app": "cb_maintenance",
+ "charts": [],
+ "content": "[{\"id\":\"cb-maint-hero\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>CB Maintenance</b></span>\",\"col\":12}},{\"id\":\"cb-maint-shortcut\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Dashboard\",\"col\":4}}]",
+ "creation": "2026-07-09 12:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "tool",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "CB Maintenance",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Dashboard",
+   "link_count": 0,
+   "link_to": "cb-maintenance",
+   "link_type": "Page",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "PM Work Orders",
+   "link_count": 0,
+   "link_to": "CB PM Work Order",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Maintenance Tickets",
+   "link_count": 0,
+   "link_to": "CB Maintenance Ticket",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-07-09 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "CB Maintenance",
+ "name": "CB Maintenance Desk",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 12.0,
+ "shortcuts": [
+  {
+   "label": "Dashboard",
+   "link_to": "cb-maintenance",
+   "type": "Page"
+  },
+  {
+   "label": "PM Work Orders",
+   "link_to": "CB PM Work Order",
+   "type": "DocType"
+  },
+  {
+   "label": "Maintenance Tickets",
+   "link_to": "CB Maintenance Ticket",
+   "type": "DocType"
+  }
+ ],
+ "sidebar_items": [
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "layout-dashboard",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Dashboard",
+   "link_to": "cb-maintenance",
+   "link_type": "Page",
+   "open_in_new_tab": 0,
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "clipboard-list",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "PM Work Orders",
+   "link_to": "CB PM Work Order",
+   "link_type": "DocType",
+   "open_in_new_tab": 0,
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "ticket",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Maintenance Tickets",
+   "link_to": "CB Maintenance Ticket",
+   "link_type": "DocType",
+   "open_in_new_tab": 0,
+   "show_arrow": 0,
+   "type": "Link"
+  }
+ ],
+ "standard": 1,
+ "title": "CB Maintenance",
+ "type": "Workspace"
+}

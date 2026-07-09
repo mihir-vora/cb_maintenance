@@ -13,3 +13,4 @@ def has_app_permission():
 
 def extend_bootinfo(bootinfo):
 	bootinfo.cb_maintenance_home = "/app/cb-maintenance"
+	bootinfo.cb_maintenance_sidebar_workspace = "CB Maintenance Desk"
